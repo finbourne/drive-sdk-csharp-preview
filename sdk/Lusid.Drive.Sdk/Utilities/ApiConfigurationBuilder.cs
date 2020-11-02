@@ -24,7 +24,7 @@ namespace Lusid.Drive.Sdk.Utilities
             var apiConfig = new ApiConfiguration
             {
                 TokenUrl = Environment.GetEnvironmentVariable("FBN_TOKEN_URL")?? Environment.GetEnvironmentVariable("fbn_token_url"),
-                ApiUrl = Environment.GetEnvironmentVariable("FBN_LUSID_API_URL") ?? Environment.GetEnvironmentVariable("fbn_lusid_api_url"),
+                DriveUrl = Environment.GetEnvironmentVariable("FBN_LUSID_DRIVE_URL") ?? Environment.GetEnvironmentVariable("fbn_lusid_drive_url"),
                 ClientId = Environment.GetEnvironmentVariable("FBN_CLIENT_ID") ?? Environment.GetEnvironmentVariable("fbn_client_id"),
                 ClientSecret = Environment.GetEnvironmentVariable("FBN_CLIENT_SECRET") ?? Environment.GetEnvironmentVariable("fbn_client_secret"),
                 Username = Environment.GetEnvironmentVariable("FBN_USERNAME") ?? Environment.GetEnvironmentVariable("fbn_username"),
@@ -37,7 +37,7 @@ namespace Lusid.Drive.Sdk.Utilities
                 string.IsNullOrEmpty(apiConfig.Password) ||
                 string.IsNullOrEmpty(apiConfig.ClientId) ||
                 string.IsNullOrEmpty(apiConfig.ClientSecret) ||
-                string.IsNullOrEmpty(apiConfig.ApiUrl))
+                string.IsNullOrEmpty(apiConfig.DriveUrl))
             {
                 var config = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())

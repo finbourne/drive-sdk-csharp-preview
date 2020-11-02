@@ -31,9 +31,9 @@
         public string ClientSecret { get;  set; }
 
         /// <summary>
-        /// LUSID Api Url
+        /// LUSID Drive Url
         /// </summary>
-        public string ApiUrl { get; set; }
+        public string DriveUrl { get; set; }
 
         /// <summary>
         /// Client Application name
