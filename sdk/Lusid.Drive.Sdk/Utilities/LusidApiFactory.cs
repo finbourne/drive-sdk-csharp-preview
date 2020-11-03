@@ -35,16 +35,16 @@ namespace Lusid.Drive.Sdk.Utilities
                 throw new UriFormatException($"Invalid Token Uri: {apiConfiguration.TokenUrl}");
             }
 
-            if (!Uri.TryCreate(apiConfiguration.ApiUrl, UriKind.Absolute, out var _))
+            if (!Uri.TryCreate(apiConfiguration.DriveUrl, UriKind.Absolute, out var _))
             {
-                throw new UriFormatException($"Invalid LUSID Uri: {apiConfiguration.ApiUrl}");
+                throw new UriFormatException($"Invalid LUSID Drive Uri: {apiConfiguration.DriveUrl}");
             }
 
             // Create configuration
             var tokenProvider = new ClientCredentialsFlowTokenProvider(apiConfiguration);
             var configuration = new TokenProviderConfiguration(tokenProvider)
             {
-                BasePath = apiConfiguration.ApiUrl,
+                BasePath = apiConfiguration.DriveUrl,
             };
             
             configuration.AddDefaultHeader("X-LUSID-Application", apiConfiguration.ApplicationName);
