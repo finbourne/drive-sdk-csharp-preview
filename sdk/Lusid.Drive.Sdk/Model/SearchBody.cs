@@ -23,56 +23,48 @@ using OpenAPIDateConverter = Lusid.Drive.Sdk.Client.OpenAPIDateConverter;
 namespace Lusid.Drive.Sdk.Model
 {
     /// <summary>
-    /// DTO representing the creation of a folder
+    /// DTO representing the search query
     /// </summary>
     [DataContract]
-    public partial class CreateFolder :  IEquatable<CreateFolder>
+    public partial class SearchBody :  IEquatable<SearchBody>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateFolder" /> class.
+        /// Initializes a new instance of the <see cref="SearchBody" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected CreateFolder() { }
+        protected SearchBody() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="CreateFolder" /> class.
+        /// Initializes a new instance of the <see cref="SearchBody" /> class.
         /// </summary>
-        /// <param name="path">Path of the created folder (required).</param>
-        /// <param name="name">Name of the created folder (required).</param>
-        public CreateFolder(string path = default(string), string name = default(string))
+        /// <param name="withPath">Optional path field to limit the search to result with a matching (case insensitive) path.</param>
+        /// <param name="name">Name of the file or folder to be searched (required).</param>
+        public SearchBody(string withPath = default(string), string name = default(string))
         {
-            // to ensure "path" is required (not null)
-            if (path == null)
-            {
-                throw new InvalidDataException("path is a required property for CreateFolder and cannot be null");
-            }
-            else
-            {
-                this.Path = path;
-            }
-            
+            this.WithPath = withPath;
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new InvalidDataException("name is a required property for CreateFolder and cannot be null");
+                throw new InvalidDataException("name is a required property for SearchBody and cannot be null");
             }
             else
             {
                 this.Name = name;
             }
             
+            this.WithPath = withPath;
         }
         
         /// <summary>
-        /// Path of the created folder
+        /// Optional path field to limit the search to result with a matching (case insensitive) path
         /// </summary>
-        /// <value>Path of the created folder</value>
-        [DataMember(Name="path", EmitDefaultValue=false)]
-        public string Path { get; set; }
+        /// <value>Optional path field to limit the search to result with a matching (case insensitive) path</value>
+        [DataMember(Name="withPath", EmitDefaultValue=true)]
+        public string WithPath { get; set; }
 
         /// <summary>
-        /// Name of the created folder
+        /// Name of the file or folder to be searched
         /// </summary>
-        /// <value>Name of the created folder</value>
+        /// <value>Name of the file or folder to be searched</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
 
@@ -83,8 +75,8 @@ namespace Lusid.Drive.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class CreateFolder {\n");
-            sb.Append("  Path: ").Append(Path).Append("\n");
+            sb.Append("class SearchBody {\n");
+            sb.Append("  WithPath: ").Append(WithPath).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -106,24 +98,24 @@ namespace Lusid.Drive.Sdk.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as CreateFolder);
+            return this.Equals(input as SearchBody);
         }
 
         /// <summary>
-        /// Returns true if CreateFolder instances are equal
+        /// Returns true if SearchBody instances are equal
         /// </summary>
-        /// <param name="input">Instance of CreateFolder to be compared</param>
+        /// <param name="input">Instance of SearchBody to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(CreateFolder input)
+        public bool Equals(SearchBody input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Path == input.Path ||
-                    (this.Path != null &&
-                    this.Path.Equals(input.Path))
+                    this.WithPath == input.WithPath ||
+                    (this.WithPath != null &&
+                    this.WithPath.Equals(input.WithPath))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -141,8 +133,8 @@ namespace Lusid.Drive.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Path != null)
-                    hashCode = hashCode * 59 + this.Path.GetHashCode();
+                if (this.WithPath != null)
+                    hashCode = hashCode * 59 + this.WithPath.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 return hashCode;

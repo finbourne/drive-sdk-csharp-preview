@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.1.93",
+    "version": "0.1.95",
     "x-logo": {
       "url": "https://content.finbourne.com/LUSID-header.png",
       "backgroundColor": "#415464"
@@ -1639,6 +1639,137 @@
         ],
         "x-fbn-apistatus": "EarlyAccess"
       }
+    },
+    "/api/search": {
+      "post": {
+        "tags": [
+          "Search"
+        ],
+        "summary": "[EXPERIMENTAL] Search for a file or folder with a given name and path",
+        "operationId": "Search",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "description": "",
+              "nullable": true
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "",
+              "nullable": true
+            },
+            "x-nullable": true
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "description": "",
+              "format": "int32",
+              "nullable": true
+            },
+            "x-nullable": true
+          },
+          {
+            "name": "filter",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "description": "",
+              "default": "",
+              "nullable": true
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Search parameters",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchBody"
+              },
+              "example": {
+  "withPath": "/some/path",
+  "name": "filename.pdf"
+}
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResourceListOfStorageObject"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResourceListOfStorageObject"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PagedResourceListOfStorageObject"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The details of the input related failure",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidValidationProblemDetails"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Error response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidProblemDetails"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "oauth2": [ ]
+          }
+        ],
+        "x-fbn-apistatus": "Experimental"
+      }
     }
   },
   "components": {
@@ -2160,6 +2291,29 @@
           }
         },
         "additionalProperties": false
+      },
+      "SearchBody": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "withPath": {
+            "pattern": "^([\\/a-zA-Z0-9 \\-_]+)+$",
+            "type": "string",
+            "description": "Optional path field to limit the search to result with a matching (case insensitive) path",
+            "nullable": true
+          },
+          "name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "pattern": "[A-Za-z0-9_-]+[A-Za-z0-9 _-]*\\.*[A-Za-z0-9]+",
+            "type": "string",
+            "description": "Name of the file or folder to be searched"
+          }
+        },
+        "additionalProperties": false,
+        "description": "DTO representing the search query"
       }
     },
     "securitySchemes": {
@@ -2190,6 +2344,10 @@
     {
       "name": "Folders",
       "description": "Methods for interacting with the folders endpoints in Lusid drive"
+    },
+    {
+      "name": "Search",
+      "description": "Method to search files and folders"
     }
   ],
   "x-tagGroups": {
@@ -2197,7 +2355,8 @@
     "tags": [
       "Application Metadata",
       "Files",
-      "Folders"
+      "Folders",
+      "Search"
     ]
   }
 }

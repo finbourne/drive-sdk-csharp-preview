@@ -21,64 +21,84 @@ namespace Lusid.Drive.Sdk.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IApplicationMetadataApi : IApiAccessor
+    public interface ISearchApi : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// [EARLY ACCESS] Get resources available for access control
+        /// [EXPERIMENTAL] Search for a file or folder with a given name and path
         /// </summary>
         /// <remarks>
-        /// Get the comprehensive set of resources that are available for access control
+        /// 
         /// </remarks>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ResourceListOfAccessControlledResource</returns>
-        ResourceListOfAccessControlledResource ListAccessControlledResources ();
+        /// <param name="searchBody">Search parameters</param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="sortBy"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="filter"> (optional, default to &quot;&quot;)</param>
+        /// <returns>PagedResourceListOfStorageObject</returns>
+        PagedResourceListOfStorageObject Search (SearchBody searchBody, string page = null, List<string> sortBy = null, int? limit = null, string filter = null);
 
         /// <summary>
-        /// [EARLY ACCESS] Get resources available for access control
+        /// [EXPERIMENTAL] Search for a file or folder with a given name and path
         /// </summary>
         /// <remarks>
-        /// Get the comprehensive set of resources that are available for access control
+        /// 
         /// </remarks>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ResourceListOfAccessControlledResource</returns>
-        ApiResponse<ResourceListOfAccessControlledResource> ListAccessControlledResourcesWithHttpInfo ();
+        /// <param name="searchBody">Search parameters</param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="sortBy"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="filter"> (optional, default to &quot;&quot;)</param>
+        /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
+        ApiResponse<PagedResourceListOfStorageObject> SearchWithHttpInfo (SearchBody searchBody, string page = null, List<string> sortBy = null, int? limit = null, string filter = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// [EARLY ACCESS] Get resources available for access control
+        /// [EXPERIMENTAL] Search for a file or folder with a given name and path
         /// </summary>
         /// <remarks>
-        /// Get the comprehensive set of resources that are available for access control
+        /// 
         /// </remarks>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ResourceListOfAccessControlledResource</returns>
-        System.Threading.Tasks.Task<ResourceListOfAccessControlledResource> ListAccessControlledResourcesAsync ();
+        /// <param name="searchBody">Search parameters</param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="sortBy"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="filter"> (optional, default to &quot;&quot;)</param>
+        /// <returns>Task of PagedResourceListOfStorageObject</returns>
+        System.Threading.Tasks.Task<PagedResourceListOfStorageObject> SearchAsync (SearchBody searchBody, string page = null, List<string> sortBy = null, int? limit = null, string filter = null);
 
         /// <summary>
-        /// [EARLY ACCESS] Get resources available for access control
+        /// [EXPERIMENTAL] Search for a file or folder with a given name and path
         /// </summary>
         /// <remarks>
-        /// Get the comprehensive set of resources that are available for access control
+        /// 
         /// </remarks>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ResourceListOfAccessControlledResource)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResourceListOfAccessControlledResource>> ListAccessControlledResourcesAsyncWithHttpInfo ();
+        /// <param name="searchBody">Search parameters</param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="sortBy"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="filter"> (optional, default to &quot;&quot;)</param>
+        /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PagedResourceListOfStorageObject>> SearchAsyncWithHttpInfo (SearchBody searchBody, string page = null, List<string> sortBy = null, int? limit = null, string filter = null);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ApplicationMetadataApi : IApplicationMetadataApi
+    public partial class SearchApi : ISearchApi
     {
         private Lusid.Drive.Sdk.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplicationMetadataApi"/> class.
+        /// Initializes a new instance of the <see cref="SearchApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ApplicationMetadataApi(String basePath)
+        public SearchApi(String basePath)
         {
             this.Configuration = new Lusid.Drive.Sdk.Client.Configuration { BasePath = basePath };
 
@@ -86,10 +106,10 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplicationMetadataApi"/> class
+        /// Initializes a new instance of the <see cref="SearchApi"/> class
         /// </summary>
         /// <returns></returns>
-        public ApplicationMetadataApi()
+        public SearchApi()
         {
             this.Configuration = Lusid.Drive.Sdk.Client.Configuration.Default;
 
@@ -97,12 +117,12 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplicationMetadataApi"/> class
+        /// Initializes a new instance of the <see cref="SearchApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ApplicationMetadataApi(Lusid.Drive.Sdk.Client.Configuration configuration = null)
+        public SearchApi(Lusid.Drive.Sdk.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
                 this.Configuration = Lusid.Drive.Sdk.Client.Configuration.Default;
@@ -176,25 +196,38 @@ namespace Lusid.Drive.Sdk.Api
         }
 
         /// <summary>
-        /// [EARLY ACCESS] Get resources available for access control Get the comprehensive set of resources that are available for access control
+        /// [EXPERIMENTAL] Search for a file or folder with a given name and path 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ResourceListOfAccessControlledResource</returns>
-        public ResourceListOfAccessControlledResource ListAccessControlledResources ()
+        /// <param name="searchBody">Search parameters</param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="sortBy"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="filter"> (optional, default to &quot;&quot;)</param>
+        /// <returns>PagedResourceListOfStorageObject</returns>
+        public PagedResourceListOfStorageObject Search (SearchBody searchBody, string page = null, List<string> sortBy = null, int? limit = null, string filter = null)
         {
-             ApiResponse<ResourceListOfAccessControlledResource> localVarResponse = ListAccessControlledResourcesWithHttpInfo();
+             ApiResponse<PagedResourceListOfStorageObject> localVarResponse = SearchWithHttpInfo(searchBody, page, sortBy, limit, filter);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [EARLY ACCESS] Get resources available for access control Get the comprehensive set of resources that are available for access control
+        /// [EXPERIMENTAL] Search for a file or folder with a given name and path 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ResourceListOfAccessControlledResource</returns>
-        public ApiResponse< ResourceListOfAccessControlledResource > ListAccessControlledResourcesWithHttpInfo ()
+        /// <param name="searchBody">Search parameters</param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="sortBy"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="filter"> (optional, default to &quot;&quot;)</param>
+        /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
+        public ApiResponse< PagedResourceListOfStorageObject > SearchWithHttpInfo (SearchBody searchBody, string page = null, List<string> sortBy = null, int? limit = null, string filter = null)
         {
+            // verify the required parameter 'searchBody' is set
+            if (searchBody == null)
+                throw new ApiException(400, "Missing required parameter 'searchBody' when calling SearchApi->Search");
 
-            var localVarPath = "./api/metadata/access/resources";
+            var localVarPath = "./api/search";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -204,6 +237,7 @@ namespace Lusid.Drive.Sdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -217,6 +251,18 @@ namespace Lusid.Drive.Sdk.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (sortBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sortBy", sortBy)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+            if (searchBody != null && searchBody.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(searchBody); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = searchBody; // byte array
+            }
 
             // authentication (oauth2) required
             // oauth required
@@ -231,43 +277,56 @@ namespace Lusid.Drive.Sdk.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ListAccessControlledResources", localVarResponse);
+                Exception exception = ExceptionFactory("Search", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ResourceListOfAccessControlledResource>(localVarStatusCode,
+            return new ApiResponse<PagedResourceListOfStorageObject>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
-                (ResourceListOfAccessControlledResource) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResourceListOfAccessControlledResource)));
+                (PagedResourceListOfStorageObject) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PagedResourceListOfStorageObject)));
         }
 
         /// <summary>
-        /// [EARLY ACCESS] Get resources available for access control Get the comprehensive set of resources that are available for access control
+        /// [EXPERIMENTAL] Search for a file or folder with a given name and path 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ResourceListOfAccessControlledResource</returns>
-        public async System.Threading.Tasks.Task<ResourceListOfAccessControlledResource> ListAccessControlledResourcesAsync ()
+        /// <param name="searchBody">Search parameters</param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="sortBy"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="filter"> (optional, default to &quot;&quot;)</param>
+        /// <returns>Task of PagedResourceListOfStorageObject</returns>
+        public async System.Threading.Tasks.Task<PagedResourceListOfStorageObject> SearchAsync (SearchBody searchBody, string page = null, List<string> sortBy = null, int? limit = null, string filter = null)
         {
-             ApiResponse<ResourceListOfAccessControlledResource> localVarResponse = await ListAccessControlledResourcesAsyncWithHttpInfo();
+             ApiResponse<PagedResourceListOfStorageObject> localVarResponse = await SearchAsyncWithHttpInfo(searchBody, page, sortBy, limit, filter);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [EARLY ACCESS] Get resources available for access control Get the comprehensive set of resources that are available for access control
+        /// [EXPERIMENTAL] Search for a file or folder with a given name and path 
         /// </summary>
         /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ResourceListOfAccessControlledResource)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ResourceListOfAccessControlledResource>> ListAccessControlledResourcesAsyncWithHttpInfo ()
+        /// <param name="searchBody">Search parameters</param>
+        /// <param name="page"> (optional)</param>
+        /// <param name="sortBy"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="filter"> (optional, default to &quot;&quot;)</param>
+        /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PagedResourceListOfStorageObject>> SearchAsyncWithHttpInfo (SearchBody searchBody, string page = null, List<string> sortBy = null, int? limit = null, string filter = null)
         {
+            // verify the required parameter 'searchBody' is set
+            if (searchBody == null)
+                throw new ApiException(400, "Missing required parameter 'searchBody' when calling SearchApi->Search");
 
-            var localVarPath = "./api/metadata/access/resources";
+            var localVarPath = "./api/search";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -277,6 +336,7 @@ namespace Lusid.Drive.Sdk.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
+                "application/json"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -290,6 +350,18 @@ namespace Lusid.Drive.Sdk.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (page != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "page", page)); // query parameter
+            if (sortBy != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("multi", "sortBy", sortBy)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (filter != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "filter", filter)); // query parameter
+            if (searchBody != null && searchBody.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(searchBody); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = searchBody; // byte array
+            }
 
             // authentication (oauth2) required
             // oauth required
@@ -304,20 +376,20 @@ namespace Lusid.Drive.Sdk.Api
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
             int localVarStatusCode = (int) localVarResponse.StatusCode;
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ListAccessControlledResources", localVarResponse);
+                Exception exception = ExceptionFactory("Search", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ResourceListOfAccessControlledResource>(localVarStatusCode,
+            return new ApiResponse<PagedResourceListOfStorageObject>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => string.Join(",", x.Value)),
-                (ResourceListOfAccessControlledResource) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ResourceListOfAccessControlledResource)));
+                (PagedResourceListOfStorageObject) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PagedResourceListOfStorageObject)));
         }
 
     }
