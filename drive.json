@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.1.148",
+    "version": "0.1.149",
     "x-logo": {
       "url": "https://content.finbourne.com/LUSID-header.png",
       "backgroundColor": "#415464"
@@ -36,7 +36,7 @@
             "schema": {
               "maxLength": 256,
               "minLength": 1,
-              "pattern": "^[A-Za-z0-9_-]+[A-Za-z0-9 _-]*\\.*[A-Za-z0-9]+$",
+              "pattern": "^[A-Za-z0-9_\\-\\. ]+$",
               "type": "string",
               "description": "File name."
             }
@@ -49,7 +49,7 @@
             "schema": {
               "maxLength": 512,
               "minLength": 1,
-              "pattern": "^([\\/a-zA-Z0-9 \\-_]+)+$",
+              "pattern": "^[\\/a-zA-Z0-9 \\-_]+$",
               "type": "string",
               "description": "File path."
             }
@@ -764,7 +764,7 @@
             "schema": {
               "maxLength": 2147483647,
               "minLength": 0,
-              "pattern": ".*",
+              "pattern": "(?s).*",
               "type": "string",
               "description": "Expression to filter the result set.",
               "default": "true",
@@ -1552,7 +1552,7 @@
             "schema": {
               "maxLength": 2147483647,
               "minLength": 0,
-              "pattern": ".*",
+              "pattern": "(?s).*",
               "type": "string",
               "description": "Expression to filter the result set.",
               "default": "",
@@ -1742,7 +1742,7 @@
             "schema": {
               "maxLength": 2147483647,
               "minLength": 0,
-              "pattern": ".*",
+              "pattern": "(?s).*",
               "type": "string",
               "description": "",
               "default": "",
@@ -1876,7 +1876,7 @@
           "path": {
             "maxLength": 512,
             "minLength": 1,
-            "pattern": "^([\\/a-zA-Z0-9 \\-_]+)+$",
+            "pattern": "^[\\/a-zA-Z0-9 \\-_]+$",
             "type": "string",
             "description": "Path of the folder or file"
           },
@@ -2060,7 +2060,7 @@
           "path": {
             "maxLength": 512,
             "minLength": 1,
-            "pattern": "^([\\/a-zA-Z0-9 \\-_]+)+$",
+            "pattern": "^[\\/a-zA-Z0-9 \\-_]+$",
             "type": "string",
             "description": "Path of the updated file"
           },
@@ -2120,7 +2120,7 @@
           "path": {
             "maxLength": 512,
             "minLength": 1,
-            "pattern": "^([\\/a-zA-Z0-9 \\-_]+)+$",
+            "pattern": "^[\\/a-zA-Z0-9 \\-_]+$",
             "type": "string",
             "description": "Path of the created folder"
           },
@@ -2145,7 +2145,7 @@
           "path": {
             "maxLength": 512,
             "minLength": 1,
-            "pattern": "^([\\/a-zA-Z0-9 \\-_]+)+$",
+            "pattern": "^[\\/a-zA-Z0-9 \\-_]+$",
             "type": "string",
             "description": "Path of the updated folder"
           },
@@ -2365,7 +2365,7 @@
           "withPath": {
             "maxLength": 512,
             "minLength": 1,
-            "pattern": "^([\\/a-zA-Z0-9 \\-_]+)+$",
+            "pattern": "^[\\/a-zA-Z0-9 \\-_]+$",
             "type": "string",
             "description": "Optional path field to limit the search to result with a matching (case insensitive) path",
             "nullable": true
