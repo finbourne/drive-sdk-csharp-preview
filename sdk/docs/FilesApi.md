@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## CreateFile
 
-> StorageObject CreateFile (string xLusidDriveFilename, string xLusidDrivePath, int? contentLength, byte[] body = null)
+> StorageObject CreateFile (string xLusidDriveFilename, string xLusidDrivePath, int? contentLength, byte[] body)
 
 [EXPERIMENTAL] Uploads a file to Lusid Drive.
 
@@ -41,8 +41,8 @@ namespace Example
             var apiInstance = new FilesApi(Configuration.Default);
             var xLusidDriveFilename = xLusidDriveFilename_example;  // string | File name.
             var xLusidDrivePath = xLusidDrivePath_example;  // string | File path.
-            var contentLength = 56;  // int? | File size.
-            var body = {"x-lusid-drive-filename":"filename","x-lusid-drive-path":"/file/path","content-Length":"123"};  // byte[] | File contents. (optional) 
+            var contentLength = 56;  // int? | The size in bytes of the file to be uploaded
+            var body = BYTE_ARRAY_DATA_HERE;  // byte[] | 
 
             try
             {
@@ -68,8 +68,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xLusidDriveFilename** | **string**| File name. | 
  **xLusidDrivePath** | **string**| File path. | 
- **contentLength** | **int?**| File size. | 
- **body** | **byte[]**| File contents. | [optional] 
+ **contentLength** | **int?**| The size in bytes of the file to be uploaded | 
+ **body** | **byte[]**|  | 
 
 ### Return type
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ## UpdateFileContents
 
-> StorageObject UpdateFileContents (string id, byte[] body = null)
+> StorageObject UpdateFileContents (string id, int? contentLength, byte[] body)
 
 [EXPERIMENTAL] Updates contents of a file in Drive.
 
@@ -356,13 +356,14 @@ namespace Example
             Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new FilesApi(Configuration.Default);
-            var id = id_example;  // string | Identifier of the file.
-            var body = {"path":"/New/parent/folder/path","name":"new-file-name"};  // byte[] | File contents. (optional) 
+            var id = id_example;  // string | The unique file identifier
+            var contentLength = 56;  // int? | The size in bytes of the file to be uploaded
+            var body = BYTE_ARRAY_DATA_HERE;  // byte[] | 
 
             try
             {
                 // [EXPERIMENTAL] Updates contents of a file in Drive.
-                StorageObject result = apiInstance.UpdateFileContents(id, body);
+                StorageObject result = apiInstance.UpdateFileContents(id, contentLength, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException e)
@@ -381,8 +382,9 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| Identifier of the file. | 
- **body** | **byte[]**| File contents. | [optional] 
+ **id** | **string**| The unique file identifier | 
+ **contentLength** | **int?**| The size in bytes of the file to be uploaded | 
+ **body** | **byte[]**|  | 
 
 ### Return type
 
