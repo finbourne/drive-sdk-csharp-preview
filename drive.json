@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.1.159",
+    "version": "0.1.168",
     "x-logo": {
       "url": "https://content.finbourne.com/LUSID-header.png",
       "backgroundColor": "#415464"
@@ -57,32 +57,27 @@
           {
             "name": "Content-Length",
             "in": "header",
-            "description": "File size.",
+            "description": "The size in bytes of the file to be uploaded",
             "required": true,
             "schema": {
+              "maximum": 524288000,
+              "minimum": 1,
               "type": "integer",
-              "description": "File size.",
+              "description": "The size in bytes of the file to be uploaded",
               "format": "int32"
             }
           }
         ],
         "requestBody": {
-          "description": "File contents.",
           "content": {
             "application/octet-stream": {
               "schema": {
                 "type": "string",
-                "description": "File contents.",
-                "format": "byte",
-                "nullable": true
-              },
-              "example": {
-  "x-lusid-drive-filename": "filename",
-  "x-lusid-drive-path": "/file/path",
-  "content-Length": "123"
-}
+                "format": "byte"
+              }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "201": {
@@ -577,33 +572,40 @@
           {
             "name": "id",
             "in": "path",
-            "description": "Identifier of the file.",
+            "description": "The unique file identifier",
             "required": true,
             "schema": {
               "maxLength": 40,
               "minLength": 30,
               "pattern": "^[a-zA-Z0-9\\-]+$",
               "type": "string",
-              "description": "Identifier of the file."
+              "description": "The unique file identifier"
+            }
+          },
+          {
+            "name": "Content-Length",
+            "in": "header",
+            "description": "The size in bytes of the file to be uploaded",
+            "required": true,
+            "schema": {
+              "maximum": 524288000,
+              "minimum": 1,
+              "type": "integer",
+              "description": "The size in bytes of the file to be uploaded",
+              "format": "int32"
             }
           }
         ],
         "requestBody": {
-          "description": "File contents.",
           "content": {
             "application/octet-stream": {
               "schema": {
                 "type": "string",
-                "description": "File contents.",
-                "format": "byte",
-                "nullable": true
-              },
-              "example": {
-  "path": "/New/parent/folder/path",
-  "name": "new-file-name"
-}
+                "format": "byte"
+              }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -2351,6 +2353,14 @@
             "items": {
               "$ref": "#/components/schemas/Link"
             },
+            "nullable": true
+          },
+          "nextPage": {
+            "type": "string",
+            "nullable": true
+          },
+          "previousPage": {
+            "type": "string",
             "nullable": true
           }
         },
