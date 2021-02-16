@@ -4,13 +4,13 @@ All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateFolder**](FoldersApi.md#createfolder) | **POST** /api/folders | [EXPERIMENTAL] Create a new folder in LUSID Drive
-[**DeleteFolder**](FoldersApi.md#deletefolder) | **DELETE** /api/folders/{id} | [EXPERIMENTAL] Delete a specified folder and all subfolders
-[**GetFolder**](FoldersApi.md#getfolder) | **GET** /api/folders/{id} | [EXPERIMENTAL] Get metadata of folder
-[**GetFolderContents**](FoldersApi.md#getfoldercontents) | **GET** /api/folders/{id}/contents | [EXPERIMENTAL] List contents of a folder
-[**GetRootFolder**](FoldersApi.md#getrootfolder) | **GET** /api/folders | [EXPERIMENTAL] List contents of root folder
-[**MoveFolder**](FoldersApi.md#movefolder) | **POST** /api/folders/{id} | [EXPERIMENTAL] Move files to specified folder
-[**UpdateFolder**](FoldersApi.md#updatefolder) | **PUT** /api/folders/{id} | [EXPERIMENTAL] Update an existing folder&#39;s name, path
+[**CreateFolder**](FoldersApi.md#createfolder) | **POST** /api/folders | [BETA] Create a new folder in LUSID Drive
+[**DeleteFolder**](FoldersApi.md#deletefolder) | **DELETE** /api/folders/{id} | [BETA] Delete a specified folder and all subfolders
+[**GetFolder**](FoldersApi.md#getfolder) | **GET** /api/folders/{id} | [BETA] Get metadata of folder
+[**GetFolderContents**](FoldersApi.md#getfoldercontents) | **GET** /api/folders/{id}/contents | [BETA] List contents of a folder
+[**GetRootFolder**](FoldersApi.md#getrootfolder) | **GET** /api/folders | [BETA] List contents of root folder
+[**MoveFolder**](FoldersApi.md#movefolder) | **POST** /api/folders/{id} | [BETA] Move files to specified folder
+[**UpdateFolder**](FoldersApi.md#updatefolder) | **PUT** /api/folders/{id} | [BETA] Update an existing folder&#39;s name, path
 
 
 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 > StorageObject CreateFolder (CreateFolder createFolder)
 
-[EXPERIMENTAL] Create a new folder in LUSID Drive
+[BETA] Create a new folder in LUSID Drive
 
 ### Example
 
@@ -44,7 +44,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] Create a new folder in LUSID Drive
+                // [BETA] Create a new folder in LUSID Drive
                 StorageObject result = apiInstance.CreateFolder(createFolder);
                 Debug.WriteLine(result);
             }
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 > void DeleteFolder (string id)
 
-[EXPERIMENTAL] Delete a specified folder and all subfolders
+[BETA] Delete a specified folder and all subfolders
 
 ### Example
 
@@ -122,7 +122,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] Delete a specified folder and all subfolders
+                // [BETA] Delete a specified folder and all subfolders
                 apiInstance.DeleteFolder(id);
             }
             catch (ApiException e)
@@ -174,7 +174,7 @@ void (empty response body)
 
 > StorageObject GetFolder (string id)
 
-[EXPERIMENTAL] Get metadata of folder
+[BETA] Get metadata of folder
 
 ### Example
 
@@ -200,7 +200,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] Get metadata of folder
+                // [BETA] Get metadata of folder
                 StorageObject result = apiInstance.GetFolder(id);
                 Debug.WriteLine(result);
             }
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 > PagedResourceListOfStorageObject GetFolderContents (string id, string page = null, List<string> sortBy = null, int? start = null, int? limit = null, string filter = null)
 
-[EXPERIMENTAL] List contents of a folder
+[BETA] List contents of a folder
 
 ### Example
 
@@ -284,7 +284,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] List contents of a folder
+                // [BETA] List contents of a folder
                 PagedResourceListOfStorageObject result = apiInstance.GetFolderContents(id, page, sortBy, start, limit, filter);
                 Debug.WriteLine(result);
             }
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 
 > PagedResourceListOfStorageObject GetRootFolder (string page = null, List<string> sortBy = null, int? start = null, int? limit = null, string filter = null)
 
-[EXPERIMENTAL] List contents of root folder
+[BETA] List contents of root folder
 
 ### Example
 
@@ -372,7 +372,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] List contents of root folder
+                // [BETA] List contents of root folder
                 PagedResourceListOfStorageObject result = apiInstance.GetRootFolder(page, sortBy, start, limit, filter);
                 Debug.WriteLine(result);
             }
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 > PagedResourceListOfStorageObject MoveFolder (string id, List<string> requestBody, bool? overwrite = null, bool? deleteSource = null)
 
-[EXPERIMENTAL] Move files to specified folder
+[BETA] Move files to specified folder
 
 ### Example
 
@@ -457,7 +457,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] Move files to specified folder
+                // [BETA] Move files to specified folder
                 PagedResourceListOfStorageObject result = apiInstance.MoveFolder(id, requestBody, overwrite, deleteSource);
                 Debug.WriteLine(result);
             }
@@ -514,7 +514,7 @@ Name | Type | Description  | Notes
 
 > StorageObject UpdateFolder (string id, UpdateFolder updateFolder)
 
-[EXPERIMENTAL] Update an existing folder's name, path
+[BETA] Update an existing folder's name, path
 
 ### Example
 
@@ -541,7 +541,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] Update an existing folder's name, path
+                // [BETA] Update an existing folder's name, path
                 StorageObject result = apiInstance.UpdateFolder(id, updateFolder);
                 Debug.WriteLine(result);
             }

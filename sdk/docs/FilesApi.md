@@ -4,12 +4,12 @@ All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateFile**](FilesApi.md#createfile) | **POST** /api/files | [EXPERIMENTAL] Uploads a file to Lusid Drive.
-[**DeleteFile**](FilesApi.md#deletefile) | **DELETE** /api/files/{id} | [EXPERIMENTAL] Deletes a file from Drive.
-[**DownloadFile**](FilesApi.md#downloadfile) | **GET** /api/files/{id}/contents | [EXPERIMENTAL] Download the file from Drive.
-[**GetFile**](FilesApi.md#getfile) | **GET** /api/files/{id} | [EXPERIMENTAL] Get a file stored in Drive.
-[**UpdateFileContents**](FilesApi.md#updatefilecontents) | **PUT** /api/files/{id}/contents | [EXPERIMENTAL] Updates contents of a file in Drive.
-[**UpdateFileMetadata**](FilesApi.md#updatefilemetadata) | **PUT** /api/files/{id} | [EXPERIMENTAL] Updates metadata for a file in Drive.
+[**CreateFile**](FilesApi.md#createfile) | **POST** /api/files | [BETA] Uploads a file to Lusid Drive.
+[**DeleteFile**](FilesApi.md#deletefile) | **DELETE** /api/files/{id} | [BETA] Deletes a file from Drive.
+[**DownloadFile**](FilesApi.md#downloadfile) | **GET** /api/files/{id}/contents | [BETA] Download the file from Drive.
+[**GetFile**](FilesApi.md#getfile) | **GET** /api/files/{id} | [BETA] Get a file stored in Drive.
+[**UpdateFileContents**](FilesApi.md#updatefilecontents) | **PUT** /api/files/{id}/contents | [BETA] Updates contents of a file in Drive.
+[**UpdateFileMetadata**](FilesApi.md#updatefilemetadata) | **PUT** /api/files/{id} | [BETA] Updates metadata for a file in Drive.
 
 
 
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 > StorageObject CreateFile (string xLusidDriveFilename, string xLusidDrivePath, int? contentLength, byte[] body)
 
-[EXPERIMENTAL] Uploads a file to Lusid Drive.
+[BETA] Uploads a file to Lusid Drive.
 
 ### Example
 
@@ -46,7 +46,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] Uploads a file to Lusid Drive.
+                // [BETA] Uploads a file to Lusid Drive.
                 StorageObject result = apiInstance.CreateFile(xLusidDriveFilename, xLusidDrivePath, contentLength, body);
                 Debug.WriteLine(result);
             }
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 > void DeleteFile (string id)
 
-[EXPERIMENTAL] Deletes a file from Drive.
+[BETA] Deletes a file from Drive.
 
 ### Example
 
@@ -127,7 +127,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] Deletes a file from Drive.
+                // [BETA] Deletes a file from Drive.
                 apiInstance.DeleteFile(id);
             }
             catch (ApiException e)
@@ -178,7 +178,7 @@ void (empty response body)
 
 > System.IO.Stream DownloadFile (string id)
 
-[EXPERIMENTAL] Download the file from Drive.
+[BETA] Download the file from Drive.
 
 ### Example
 
@@ -204,7 +204,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] Download the file from Drive.
+                // [BETA] Download the file from Drive.
                 System.IO.Stream result = apiInstance.DownloadFile(id);
                 Debug.WriteLine(result);
             }
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 > StorageObject GetFile (string id)
 
-[EXPERIMENTAL] Get a file stored in Drive.
+[BETA] Get a file stored in Drive.
 
 ### Example
 
@@ -282,7 +282,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] Get a file stored in Drive.
+                // [BETA] Get a file stored in Drive.
                 StorageObject result = apiInstance.GetFile(id);
                 Debug.WriteLine(result);
             }
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 > StorageObject UpdateFileContents (string id, int? contentLength, byte[] body)
 
-[EXPERIMENTAL] Updates contents of a file in Drive.
+[BETA] Updates contents of a file in Drive.
 
 ### Example
 
@@ -362,7 +362,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] Updates contents of a file in Drive.
+                // [BETA] Updates contents of a file in Drive.
                 StorageObject result = apiInstance.UpdateFileContents(id, contentLength, body);
                 Debug.WriteLine(result);
             }
@@ -416,7 +416,7 @@ Name | Type | Description  | Notes
 
 > StorageObject UpdateFileMetadata (string id, UpdateFile updateFile)
 
-[EXPERIMENTAL] Updates metadata for a file in Drive.
+[BETA] Updates metadata for a file in Drive.
 
 ### Example
 
@@ -443,7 +443,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] Updates metadata for a file in Drive.
+                // [BETA] Updates metadata for a file in Drive.
                 StorageObject result = apiInstance.UpdateFileMetadata(id, updateFile);
                 Debug.WriteLine(result);
             }

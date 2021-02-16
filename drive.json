@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.1.180",
+    "version": "0.1.181",
     "x-logo": {
       "url": "https://content.finbourne.com/LUSID-header.png",
       "backgroundColor": "#415464"
@@ -25,7 +25,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[EXPERIMENTAL] Uploads a file to Lusid Drive.",
+        "summary": "[BETA] Uploads a file to Lusid Drive.",
         "operationId": "CreateFile",
         "parameters": [
           {
@@ -167,7 +167,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       }
     },
     "/api/files/{id}": {
@@ -175,7 +175,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[EXPERIMENTAL] Get a file stored in Drive.",
+        "summary": "[BETA] Get a file stored in Drive.",
         "operationId": "GetFile",
         "parameters": [
           {
@@ -282,13 +282,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       },
       "delete": {
         "tags": [
           "Files"
         ],
-        "summary": "[EXPERIMENTAL] Deletes a file from Drive.",
+        "summary": "[BETA] Deletes a file from Drive.",
         "operationId": "DeleteFile",
         "parameters": [
           {
@@ -345,13 +345,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       },
       "put": {
         "tags": [
           "Files"
         ],
-        "summary": "[EXPERIMENTAL] Updates metadata for a file in Drive.",
+        "summary": "[BETA] Updates metadata for a file in Drive.",
         "operationId": "UpdateFileMetadata",
         "parameters": [
           {
@@ -473,7 +473,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       }
     },
     "/api/files/{id}/contents": {
@@ -481,7 +481,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[EXPERIMENTAL] Download the file from Drive.",
+        "summary": "[BETA] Download the file from Drive.",
         "operationId": "DownloadFile",
         "parameters": [
           {
@@ -558,13 +558,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       },
       "put": {
         "tags": [
           "Files"
         ],
-        "summary": "[EXPERIMENTAL] Updates contents of a file in Drive.",
+        "summary": "[BETA] Updates contents of a file in Drive.",
         "operationId": "UpdateFileContents",
         "parameters": [
           {
@@ -693,7 +693,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       }
     },
     "/api/folders": {
@@ -701,7 +701,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[EXPERIMENTAL] List contents of root folder",
+        "summary": "[BETA] List contents of root folder",
         "operationId": "GetRootFolder",
         "parameters": [
           {
@@ -827,13 +827,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       },
       "post": {
         "tags": [
           "Folders"
         ],
-        "summary": "[EXPERIMENTAL] Create a new folder in LUSID Drive",
+        "summary": "[BETA] Create a new folder in LUSID Drive",
         "operationId": "CreateFolder",
         "requestBody": {
           "description": "A CreateFolder object that defines the name and path of the new folder",
@@ -940,7 +940,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       }
     },
     "/api/folders/{id}": {
@@ -948,7 +948,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[EXPERIMENTAL] Get metadata of folder",
+        "summary": "[BETA] Get metadata of folder",
         "operationId": "GetFolder",
         "parameters": [
           {
@@ -1075,13 +1075,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       },
       "put": {
         "tags": [
           "Folders"
         ],
-        "summary": "[EXPERIMENTAL] Update an existing folder's name, path",
+        "summary": "[BETA] Update an existing folder's name, path",
         "operationId": "UpdateFolder",
         "parameters": [
           {
@@ -1223,13 +1223,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       },
       "delete": {
         "tags": [
           "Folders"
         ],
-        "summary": "[EXPERIMENTAL] Delete a specified folder and all subfolders",
+        "summary": "[BETA] Delete a specified folder and all subfolders",
         "operationId": "DeleteFolder",
         "parameters": [
           {
@@ -1306,13 +1306,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       },
       "post": {
         "tags": [
           "Folders"
         ],
-        "summary": "[EXPERIMENTAL] Move files to specified folder",
+        "summary": "[BETA] Move files to specified folder",
         "operationId": "MoveFolder",
         "parameters": [
           {
@@ -1468,7 +1468,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       }
     },
     "/api/folders/{id}/contents": {
@@ -1476,7 +1476,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[EXPERIMENTAL] List contents of a folder",
+        "summary": "[BETA] List contents of a folder",
         "operationId": "GetFolderContents",
         "parameters": [
           {
@@ -1635,7 +1635,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       }
     },
     "/api/metadata/access/resources": {
@@ -1691,7 +1691,7 @@
         "tags": [
           "Search"
         ],
-        "summary": "[EXPERIMENTAL] Search for a file or folder with a given name and path",
+        "summary": "[BETA] Search for a file or folder with a given name and path",
         "operationId": "Search",
         "parameters": [
           {
@@ -1820,7 +1820,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Experimental"
+        "x-fbn-apistatus": "Beta"
       }
     }
   },
