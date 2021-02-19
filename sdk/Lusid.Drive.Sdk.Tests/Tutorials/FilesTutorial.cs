@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Lusid.Drive.Sdk.Api;
+using Lusid.Drive.Sdk.Extensions;
 using Lusid.Drive.Sdk.Model;
 using Lusid.Drive.Sdk.Utilities;
 using NUnit.Framework;
@@ -58,6 +62,20 @@ namespace Lusid.Drive.Sdk.Tests.Tutorials
 
             Assert.AreEqual(fileName, upload.Name);
         }
+        
+        [Test]
+        public async Task Upload_File_As_Stream()
+        {
+            var data = new MemoryStream(Encoding.UTF8.GetBytes("a,b \n c,d"));
+
+            //Create a unique file name
+            var fileName = Guid.NewGuid().ToString();
+
+            //Upload a file
+            var upload = await _filesApi.UploadAsStreamAsync(fileName, "/",  (int) data.Length, data);
+             
+            Assert.AreEqual(fileName, upload.Name);
+        }
 
         [Test]
         public void Delete_File()
@@ -98,6 +116,23 @@ namespace Lusid.Drive.Sdk.Tests.Tutorials
             _filesApi.DownloadFile(upload.Id).Read(downloadedFile);
 
             Assert.AreEqual(uploadedFile, downloadedFile);
+        }
+
+        [Test]
+        public async Task Download_File_As_Stream()
+        {
+            var data = new MemoryStream(Encoding.UTF8.GetBytes("a,b \n c,d"));
+
+            //Create a unique file name
+            var fileName = Guid.NewGuid().ToString();
+
+            //Upload a file
+            var upload = await _filesApi.UploadAsStreamAsync(fileName, "/",  (int) data.Length, data);
+
+            //Download the file that was just uploaded
+            var downloadedData = await _filesApi.DownloadAsStreamAsync(upload.Id);
+            
+            Assert.AreEqual(data, downloadedData);
         }
 
         [Test]
