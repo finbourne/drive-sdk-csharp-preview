@@ -18,7 +18,7 @@ namespace Lusid.Drive.Sdk.Tests
         [OneTimeSetUp]
         public void SetUp()
         {
-            _factory = LusidApiFactoryBuilder.Build("secrets.json");
+            _factory = LusidApiFactoryBuilder.Build();
             _foldersApi = _factory.Api<IFoldersApi>();
 
             _testFolderId = _foldersApi.GetRootFolder(filter: "Name eq 'SDK_Test_Folder'").Values.SingleOrDefault()?.Id;

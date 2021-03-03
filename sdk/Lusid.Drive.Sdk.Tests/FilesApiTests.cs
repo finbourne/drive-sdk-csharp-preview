@@ -16,7 +16,7 @@ namespace Lusid.Drive.Sdk.Tests
         [OneTimeSetUp]
         public void SetUp()
         {
-            _factory = LusidApiFactoryBuilder.Build("secrets.json");
+            _factory = LusidApiFactoryBuilder.Build();
             _filesApi = _factory.Api<IFilesApi>();
             var foldersApi = _factory.Api<IFoldersApi>();
 
@@ -35,7 +35,7 @@ namespace Lusid.Drive.Sdk.Tests
             var create = _filesApi.CreateFile(fileName, "/SDK_Test_Folder", 50, data);
             Assert.That(create.Name, Is.EqualTo(fileName));
             Assert.That(create.Path, Is.EqualTo("/SDK_Test_Folder"));
-            
+
             var newName = Guid.NewGuid().ToString();
             var updateFile = new UpdateFile("/SDK_Test_Folder", newName);
             var update = _filesApi.UpdateFileMetadata(create.Id, updateFile);
