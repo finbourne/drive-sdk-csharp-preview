@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.1.187",
+    "version": "0.1.188",
     "x-logo": {
       "url": "https://content.finbourne.com/LUSID-header.png",
       "backgroundColor": "#415464"
@@ -1881,7 +1881,7 @@
           "name": {
             "maxLength": 50,
             "minLength": 1,
-            "pattern": "[A-Za-z0-9_-]+[A-Za-z0-9 _-]*\\.*[A-Za-z0-9]+",
+            "pattern": "^[A-Za-z0-9_\\-\\.]+[A-Za-z0-9_\\-\\. ]*$",
             "type": "string",
             "description": "Name of the folder or file"
           },
@@ -2065,7 +2065,7 @@
           "name": {
             "maxLength": 50,
             "minLength": 1,
-            "pattern": "[A-Za-z0-9_-]+[A-Za-z0-9 _-]*\\.*[A-Za-z0-9]+",
+            "pattern": "^[A-Za-z0-9_\\-\\.]+[A-Za-z0-9_\\-\\. ]*$",
             "type": "string",
             "description": "Name of the updated file"
           }
@@ -2379,7 +2379,7 @@
           "name": {
             "maxLength": 50,
             "minLength": 1,
-            "pattern": "[A-Za-z0-9_-]+[A-Za-z0-9 _-]*\\.*[A-Za-z0-9]+",
+            "pattern": "^[A-Za-z0-9_\\-\\.]+[A-Za-z0-9_\\-\\. ]*$",
             "type": "string",
             "description": "Name of the file or folder to be searched"
           }
