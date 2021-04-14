@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.1.201",
+    "version": "0.1.203",
     "x-logo": {
       "url": "https://content.finbourne.com/LUSID-header.png",
       "backgroundColor": "#415464"
@@ -709,7 +709,7 @@
             "in": "query",
             "description": "The pagination token to use to continue listing contents from a previous call to list contents.\r\n            This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields\r\n            must not have changed since the original request. Also, if set, a start value cannot be provided.",
             "schema": {
-              "maxLength": 300,
+              "maxLength": 500,
               "minLength": 1,
               "pattern": "^[a-zA-Z0-9\\+/]*={0,3}$",
               "type": "string",
@@ -1497,7 +1497,7 @@
             "in": "query",
             "description": "The pagination token to use to continue listing contents from a previous call to list contents.\r\n            This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields\r\n            must not have changed since the original request. Also, if set, a start value cannot be provided.",
             "schema": {
-              "maxLength": 300,
+              "maxLength": 500,
               "minLength": 1,
               "pattern": "^[a-zA-Z0-9\\+/]*={0,3}$",
               "type": "string",
@@ -1699,7 +1699,7 @@
             "in": "query",
             "description": "",
             "schema": {
-              "maxLength": 300,
+              "maxLength": 500,
               "minLength": 1,
               "pattern": "^[a-zA-Z0-9\\+/]*={0,3}$",
               "type": "string",
