@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **UpdatedOn** | **DateTimeOffset?** | Date of file/folder modification | 
 **Type** | **string** | Type of storage object (file or folder) | 
 **Size** | **int?** | Size of the file in bytes | [optional] 
+**Status** | **string** | File status corresponding to virus scan status | [optional] 
+**StatusDetail** | **string** | Detailed description describing any negative terminal state of file | [optional] 
 **Links** | [**List&lt;Link&gt;**](Link.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models)
