@@ -243,6 +243,8 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **410** | Malware detected, restricted from downloading file. |  -  |
+| **423** | Virus scan in progress, restricted from downloading file. |  -  |
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
