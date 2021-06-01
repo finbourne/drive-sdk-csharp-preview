@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.1.219",
+    "version": "0.1.220",
     "x-logo": {
       "url": "https://content.finbourne.com/LUSID-header.png",
       "backgroundColor": "#415464"
@@ -826,7 +826,7 @@
             "schema": {
               "maxLength": 2147483647,
               "minLength": 0,
-              "pattern": "(?s).*",
+              "pattern": "^[\\s\\S]*$",
               "type": "string",
               "description": "Expression to filter the result set.",
               "default": "true",
@@ -1632,7 +1632,7 @@
             "schema": {
               "maxLength": 2147483647,
               "minLength": 0,
-              "pattern": "(?s).*",
+              "pattern": "^[\\s\\S]*$",
               "type": "string",
               "description": "Expression to filter the result set.",
               "default": "",
@@ -1822,7 +1822,7 @@
             "schema": {
               "maxLength": 2147483647,
               "minLength": 0,
-              "pattern": "(?s).*",
+              "pattern": "^[\\s\\S]*$",
               "type": "string",
               "description": "",
               "default": "",
