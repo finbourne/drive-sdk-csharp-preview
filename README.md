@@ -10,3 +10,8 @@ $ dotnet add package Lusid.Drive.Sdk.Preview
 ```
 
 For further documentation on building the SDK, running the tutorials and using the SDK please see the [wiki](https://github.com/finbourne/lusid-sdk-csharp-preview/wiki).
+
+### For running the Drive.Sdk.Tests
+
+* Create a `secrets.json` file (see the [wiki](https://github.com/finbourne/lusid-sdk-csharp-preview/wiki/API-credentials))
+* In `secrets.json` file, set `driveUrl` (Eg: ```"driveUrl": "https://www.lusid.com/drive"```)

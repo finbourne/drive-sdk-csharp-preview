@@ -12,6 +12,7 @@
     <PackageReference Include="Moq" Version="4.12.0" />
     <PackageReference Include="NUnit" Version="3.9.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.9.0" />
+    <PackageReference Include="Polly" Version="7.2.1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="secrets.json" CopyToOutputDirectory="Always" Condition="Exists('secrets.json')" />
