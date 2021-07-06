@@ -37,6 +37,11 @@ namespace Lusid.Drive.Sdk.Utilities
 
             if (!Uri.TryCreate(apiConfiguration.DriveUrl, UriKind.Absolute, out var _))
             {
+                if (string.IsNullOrEmpty(apiConfiguration.DriveUrl))
+                    throw new ArgumentNullException(
+                        nameof(apiConfiguration.DriveUrl),
+                        $"Drive Uri missing. Please specify either FBN_DRIVE_API_URL environment variable or driveUrl in secrets.json.");
+
                 throw new UriFormatException($"Invalid LUSID Drive Uri: {apiConfiguration.DriveUrl}");
             }
 

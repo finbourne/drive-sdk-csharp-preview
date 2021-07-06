@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Lusid.Drive.Sdk.Api;
 using Lusid.Drive.Sdk.Client;
 using Lusid.Drive.Sdk.Model;
@@ -16,7 +17,7 @@ namespace Lusid.Drive.Sdk.Tests
         [OneTimeSetUp]
         public void SetUp()
         {
-            _factory = LusidApiFactoryBuilder.Build();
+            _factory = LusidApiFactoryBuilder.Build("secrets.json");
             _filesApi = _factory.Api<IFilesApi>();
             var foldersApi = _factory.Api<IFoldersApi>();
 
@@ -26,7 +27,7 @@ namespace Lusid.Drive.Sdk.Tests
         }
 
         [Test]
-        public void Create_Rename_Download_Delete_File()
+        public async Task Create_Rename_Download_Delete_File()
         {
             var fileName = Guid.NewGuid().ToString();
             var rnd = new Random();
@@ -43,7 +44,8 @@ namespace Lusid.Drive.Sdk.Tests
             Assert.That(update.Path, Is.EqualTo("/SDK_Test_Folder"));
             Assert.That(update.Id, Is.EqualTo(create.Id));
 
-            var download = _filesApi.DownloadFile(update.Id);
+            var wait = new WaitForVirusScan(_filesApi);
+            var download = await wait.DownloadFileWithRetry(update.Id);
             var endData = new byte[50];
             download.Read(endData);
             Assert.That(endData, Is.EqualTo(data));

@@ -97,7 +97,7 @@ namespace Lusid.Drive.Sdk.Tests.Tutorials
         }
 
         [Test]
-        public void Download_File()
+        public async Task Download_File()
         {
             var rnd = new Random();
             var uploadedFile = new byte[100];
@@ -113,7 +113,8 @@ namespace Lusid.Drive.Sdk.Tests.Tutorials
             var downloadedFile = new byte[100];
 
             //Download file
-            _filesApi.DownloadFile(upload.Id).Read(downloadedFile);
+            var wait = new WaitForVirusScan(_filesApi);
+            (await wait.DownloadFileWithRetry(upload.Id)).Read(downloadedFile);
 
             Assert.AreEqual(uploadedFile, downloadedFile);
         }
@@ -130,7 +131,8 @@ namespace Lusid.Drive.Sdk.Tests.Tutorials
             var upload = await _filesApi.UploadAsStreamAsync(fileName, "/",  (int) data.Length, data);
 
             //Download the file that was just uploaded
-            var downloadedData = await _filesApi.DownloadAsStreamAsync(upload.Id);
+            var wait = new WaitForVirusScan(_filesApi);
+            var downloadedData = await wait.DownloadFileWithRetry(upload.Id);
             
             Assert.AreEqual(data, downloadedData);
         }
@@ -162,7 +164,7 @@ namespace Lusid.Drive.Sdk.Tests.Tutorials
         }
 
         [Test]
-        public void Update_File_Contents()
+        public async Task Update_File_Contents()
         {
             var rnd = new Random();
             var data = new byte[100];
@@ -187,7 +189,8 @@ namespace Lusid.Drive.Sdk.Tests.Tutorials
             var downloadedFile = new byte[200];
 
             //Download file
-            _filesApi.DownloadFile(upload.Id).Read(downloadedFile);
+            var wait = new WaitForVirusScan(_filesApi);
+            (await wait.DownloadFileWithRetry(upload.Id)).Read(downloadedFile);
 
             Assert.AreEqual(newData, downloadedFile);
         }
@@ -259,7 +262,7 @@ namespace Lusid.Drive.Sdk.Tests.Tutorials
         }
 
         [Test]
-        public void Move_File_With_Overwrite()
+        public async Task Move_File_With_Overwrite()
         {
             var rnd = new Random();
             var data1 = new byte[100];
@@ -288,7 +291,9 @@ namespace Lusid.Drive.Sdk.Tests.Tutorials
             var movedFile = _foldersApi.MoveFolder(folder.Id, new List<string>{upload.Id}, true, true);
 
             var downloadedFile = new byte[100];
-            _filesApi.DownloadFile(movedFile.Values.Single(x => x.Name == upload.Name).Id).Read(downloadedFile);
+            var wait = new WaitForVirusScan(_filesApi);
+            var fileId = movedFile.Values.Single(x => x.Name == upload.Name).Id;
+            (await wait.DownloadFileWithRetry(fileId)).Read(downloadedFile);
             CollectionAssert.Contains(movedFile.Values.Select(x=>x.Name), upload.Name);
             Assert.AreEqual(downloadedFile, data1);
             CollectionAssert.IsEmpty(_foldersApi.GetFolderContents(_testFolderId, filter: $"Name eq '{fileName}'").Values);
