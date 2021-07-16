@@ -17,7 +17,7 @@ namespace Lusid.Drive.Sdk.Tests
         [OneTimeSetUp]
         public void SetUp()
         {
-            _factory = LusidApiFactoryBuilder.Build("secrets.json");
+            _factory = EnvironmentCheck.FactoryForEnvironment();
             _filesApi = _factory.Api<IFilesApi>();
             var foldersApi = _factory.Api<IFoldersApi>();
 
