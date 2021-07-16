@@ -23,7 +23,7 @@ namespace Lusid.Drive.Sdk.Tests
         public void OneTimeSetUp()
         {
             _testFolderName = "Test_Folder" + Guid.NewGuid();
-            _factory = LusidApiFactoryBuilder.Build("secrets.json");
+            _factory = EnvironmentCheck.FactoryForEnvironment();
             _filesApi = _factory.Api<IFilesApi>();
             _foldersApi = _factory.Api<IFoldersApi>();
         }
