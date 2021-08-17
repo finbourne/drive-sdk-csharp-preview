@@ -4,7 +4,7 @@ All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateFile**](FilesApi.md#createfile) | **POST** /api/files | [BETA] Uploads a file to Lusid Drive.
+[**CreateFile**](FilesApi.md#createfile) | **POST** /api/files | [BETA] Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
 [**DeleteFile**](FilesApi.md#deletefile) | **DELETE** /api/files/{id} | [BETA] Deletes a file from Drive.
 [**DownloadFile**](FilesApi.md#downloadfile) | **GET** /api/files/{id}/contents | [BETA] Download the file from Drive.
 [**GetFile**](FilesApi.md#getfile) | **GET** /api/files/{id} | [BETA] Get a file stored in Drive.
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 > StorageObject CreateFile (string xLusidDriveFilename, string xLusidDrivePath, int? contentLength, byte[] body)
 
-[BETA] Uploads a file to Lusid Drive.
+[BETA] Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
 
 ### Example
 
@@ -46,7 +46,7 @@ namespace Example
 
             try
             {
-                // [BETA] Uploads a file to Lusid Drive.
+                // [BETA] Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
                 StorageObject result = apiInstance.CreateFile(xLusidDriveFilename, xLusidDrivePath, contentLength, body);
                 Debug.WriteLine(result);
             }
