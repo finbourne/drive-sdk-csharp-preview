@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 using Lusid.Drive.Sdk.Api;
 using Lusid.Drive.Sdk.Client;
 using Lusid.Drive.Sdk.Model;
-using RestSharp.Portable;
-using RestSharp.Portable.HttpClient.Impl.Http;
+using RestSharp;
 
 namespace Lusid.Drive.Sdk.Extensions
 {
