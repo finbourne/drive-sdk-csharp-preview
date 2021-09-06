@@ -7,9 +7,8 @@ Method | HTTP request | Description
 [**ListAccessControlledResources**](ApplicationMetadataApi.md#listaccesscontrolledresources) | **GET** /api/metadata/access/resources | [EARLY ACCESS] Get resources available for access control
 
 
-
-## ListAccessControlledResources
-
+<a name="listaccesscontrolledresources"></a>
+# **ListAccessControlledResources**
 > ResourceListOfAccessControlledResource ListAccessControlledResources ()
 
 [EARLY ACCESS] Get resources available for access control
@@ -17,7 +16,6 @@ Method | HTTP request | Description
 Get the comprehensive set of resources that are available for access control
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -31,11 +29,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://fbn-ci.lusid.com/drive";
+            Configuration config = new Configuration();
+            config.BasePath = "https://fbn-ci.lusid.com/drive";
             // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new ApplicationMetadataApi(Configuration.Default);
+            var apiInstance = new ApplicationMetadataApi(config);
 
             try
             {
@@ -43,7 +42,7 @@ namespace Example
                 ResourceListOfAccessControlledResource result = apiInstance.ListAccessControlledResources();
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling ApplicationMetadataApi.ListAccessControlledResources: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -55,7 +54,6 @@ namespace Example
 ```
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -68,8 +66,9 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -77,8 +76,5 @@ This endpoint does not need any parameter.
 | **200** | Success |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

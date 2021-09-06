@@ -12,15 +12,13 @@ Method | HTTP request | Description
 [**UpdateFileMetadata**](FilesApi.md#updatefilemetadata) | **PUT** /api/files/{id} | [BETA] Updates metadata for a file in Drive.
 
 
-
-## CreateFile
-
-> StorageObject CreateFile (string xLusidDriveFilename, string xLusidDrivePath, int? contentLength, byte[] body)
+<a name="createfile"></a>
+# **CreateFile**
+> StorageObject CreateFile (string xLusidDriveFilename, string xLusidDrivePath, int contentLength, byte[] body)
 
 [BETA] Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -34,14 +32,15 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://fbn-ci.lusid.com/drive";
+            Configuration config = new Configuration();
+            config.BasePath = "https://fbn-ci.lusid.com/drive";
             // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new FilesApi(Configuration.Default);
+            var apiInstance = new FilesApi(config);
             var xLusidDriveFilename = xLusidDriveFilename_example;  // string | File name.
             var xLusidDrivePath = xLusidDrivePath_example;  // string | File path.
-            var contentLength = 56;  // int? | The size in bytes of the file to be uploaded
+            var contentLength = 56;  // int | The size in bytes of the file to be uploaded
             var body = BYTE_ARRAY_DATA_HERE;  // byte[] | 
 
             try
@@ -50,7 +49,7 @@ namespace Example
                 StorageObject result = apiInstance.CreateFile(xLusidDriveFilename, xLusidDrivePath, contentLength, body);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling FilesApi.CreateFile: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -63,12 +62,11 @@ namespace Example
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xLusidDriveFilename** | **string**| File name. | 
  **xLusidDrivePath** | **string**| File path. | 
- **contentLength** | **int?**| The size in bytes of the file to be uploaded | 
+ **contentLength** | **int**| The size in bytes of the file to be uploaded | 
  **body** | **byte[]**|  | 
 
 ### Return type
@@ -81,8 +79,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/octet-stream
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/octet-stream
+ - **Accept**: text/plain, application/json, text/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -91,20 +90,15 @@ Name | Type | Description  | Notes
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## DeleteFile
-
+<a name="deletefile"></a>
+# **DeleteFile**
 > void DeleteFile (string id)
 
 [BETA] Deletes a file from Drive.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -118,11 +112,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://fbn-ci.lusid.com/drive";
+            Configuration config = new Configuration();
+            config.BasePath = "https://fbn-ci.lusid.com/drive";
             // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new FilesApi(Configuration.Default);
+            var apiInstance = new FilesApi(config);
             var id = id_example;  // string | Identifier of the file to be deleted.
 
             try
@@ -130,7 +125,7 @@ namespace Example
                 // [BETA] Deletes a file from Drive.
                 apiInstance.DeleteFile(id);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling FilesApi.DeleteFile: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -142,7 +137,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -158,8 +152,9 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -168,20 +163,15 @@ void (empty response body)
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## DownloadFile
-
+<a name="downloadfile"></a>
+# **DownloadFile**
 > System.IO.Stream DownloadFile (string id)
 
 [BETA] Download the file from Drive.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -195,11 +185,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://fbn-ci.lusid.com/drive";
+            Configuration config = new Configuration();
+            config.BasePath = "https://fbn-ci.lusid.com/drive";
             // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new FilesApi(Configuration.Default);
+            var apiInstance = new FilesApi(config);
             var id = id_example;  // string | Identifier of the file to be downloaded.
 
             try
@@ -208,7 +199,7 @@ namespace Example
                 System.IO.Stream result = apiInstance.DownloadFile(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling FilesApi.DownloadFile: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -220,7 +211,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -236,8 +226,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -248,20 +239,15 @@ Name | Type | Description  | Notes
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## GetFile
-
+<a name="getfile"></a>
+# **GetFile**
 > StorageObject GetFile (string id)
 
 [BETA] Get a file stored in Drive.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -275,11 +261,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://fbn-ci.lusid.com/drive";
+            Configuration config = new Configuration();
+            config.BasePath = "https://fbn-ci.lusid.com/drive";
             // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new FilesApi(Configuration.Default);
+            var apiInstance = new FilesApi(config);
             var id = id_example;  // string | Identifier of the file to be retrieved.
 
             try
@@ -288,7 +275,7 @@ namespace Example
                 StorageObject result = apiInstance.GetFile(id);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling FilesApi.GetFile: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -300,7 +287,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -316,8 +302,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -326,20 +313,15 @@ Name | Type | Description  | Notes
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## UpdateFileContents
-
-> StorageObject UpdateFileContents (string id, int? contentLength, byte[] body)
+<a name="updatefilecontents"></a>
+# **UpdateFileContents**
+> StorageObject UpdateFileContents (string id, int contentLength, byte[] body)
 
 [BETA] Updates contents of a file in Drive.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -353,13 +335,14 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://fbn-ci.lusid.com/drive";
+            Configuration config = new Configuration();
+            config.BasePath = "https://fbn-ci.lusid.com/drive";
             // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new FilesApi(Configuration.Default);
+            var apiInstance = new FilesApi(config);
             var id = id_example;  // string | The unique file identifier
-            var contentLength = 56;  // int? | The size in bytes of the file to be uploaded
+            var contentLength = 56;  // int | The size in bytes of the file to be uploaded
             var body = BYTE_ARRAY_DATA_HERE;  // byte[] | 
 
             try
@@ -368,7 +351,7 @@ namespace Example
                 StorageObject result = apiInstance.UpdateFileContents(id, contentLength, body);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling FilesApi.UpdateFileContents: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -381,11 +364,10 @@ namespace Example
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **string**| The unique file identifier | 
- **contentLength** | **int?**| The size in bytes of the file to be uploaded | 
+ **contentLength** | **int**| The size in bytes of the file to be uploaded | 
  **body** | **byte[]**|  | 
 
 ### Return type
@@ -398,8 +380,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/octet-stream
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/octet-stream
+ - **Accept**: text/plain, application/json, text/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -408,20 +391,15 @@ Name | Type | Description  | Notes
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-
-## UpdateFileMetadata
-
+<a name="updatefilemetadata"></a>
+# **UpdateFileMetadata**
 > StorageObject UpdateFileMetadata (string id, UpdateFile updateFile)
 
 [BETA] Updates metadata for a file in Drive.
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -435,11 +413,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://fbn-ci.lusid.com/drive";
+            Configuration config = new Configuration();
+            config.BasePath = "https://fbn-ci.lusid.com/drive";
             // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new FilesApi(Configuration.Default);
+            var apiInstance = new FilesApi(config);
             var id = id_example;  // string | Identifier of the file to be updated
             var updateFile = new UpdateFile(); // UpdateFile | Update to be applied to file
 
@@ -449,7 +428,7 @@ namespace Example
                 StorageObject result = apiInstance.UpdateFileMetadata(id, updateFile);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling FilesApi.UpdateFileMetadata: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -461,7 +440,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -478,8 +456,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json, text/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -488,8 +467,5 @@ Name | Type | Description  | Notes
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

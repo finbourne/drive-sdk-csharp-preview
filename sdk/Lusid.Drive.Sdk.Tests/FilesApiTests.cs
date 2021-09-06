@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Lusid.Drive.Sdk.Api;
 using Lusid.Drive.Sdk.Client;
@@ -33,6 +35,7 @@ namespace Lusid.Drive.Sdk.Tests
             var rnd = new Random();
             var data = new byte[50];
             rnd.NextBytes(data);
+            Console.WriteLine (Encoding.UTF8.GetString(data));
             var create = _filesApi.CreateFile(fileName, "/SDK_Test_Folder", 50, data);
             Assert.That(create.Name, Is.EqualTo(fileName));
             Assert.That(create.Path, Is.EqualTo("/SDK_Test_Folder"));
@@ -48,6 +51,7 @@ namespace Lusid.Drive.Sdk.Tests
             var download = await wait.DownloadFileWithRetry(update.Id);
             var endData = new byte[50];
             download.Read(endData);
+            Console.WriteLine (Encoding.UTF8.GetString(endData));
             Assert.That(endData, Is.EqualTo(data));
             
             _filesApi.DeleteFile(update.Id);
