@@ -61,7 +61,7 @@ namespace Lusid.Drive.Sdk.Tests
         {
             //Download a file that doesn't exist
             var exception = Assert.ThrowsAsync<ApiException>(() => 
-                _filesApi.DownloadFileAsync(Guid.NewGuid().ToString()));
+                _filesApi.DownloadAsStreamAsync(Guid.NewGuid().ToString()));
             Assert.AreEqual(exception.ErrorCode, 404);
         }
 
@@ -69,7 +69,7 @@ namespace Lusid.Drive.Sdk.Tests
         public void DownloadAsStreamAsync_WrongFormatId_Throws400()
         {
             //Download a file with an non Guid ID
-            var exception = Assert.ThrowsAsync<ApiException>(() => _filesApi.DownloadFileAsync("NotAnProperId"));
+            var exception = Assert.ThrowsAsync<ApiException>(() => _filesApi.DownloadAsStreamAsync("NotAnProperId"));
             Assert.AreEqual(exception.ErrorCode, 400);
         }
     }
