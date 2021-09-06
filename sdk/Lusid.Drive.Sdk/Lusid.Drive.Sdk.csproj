@@ -24,8 +24,6 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="FubarCoder.RestSharp.Portable.Core" Version="4.0.8" />
-    <PackageReference Include="FubarCoder.RestSharp.Portable.HttpClient" Version="4.0.8" />
     <PackageReference Include="LanguageExt.Core" Version="3.4.15" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="5.0.0-preview.5.20278.1" />
@@ -35,6 +33,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="JsonSubTypes" Version="1.8.0" />
     <PackageReference Include="Polly" Version="7.2.1" />
+    <PackageReference Include="RestSharp" Version="106.11.7" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
   </ItemGroup>
   
 </Project>
