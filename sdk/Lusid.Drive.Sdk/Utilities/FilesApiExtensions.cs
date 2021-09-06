@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
+using System.Net.WebSockets;
 using System.Threading;
 using System.Threading.Tasks;
 using Lusid.Drive.Sdk.Api;
@@ -36,7 +38,7 @@ namespace Lusid.Drive.Sdk.Extensions
             // Verify that 'xLusidDriveFilename' is set
             if (xLusidDriveFilename == null)
             {
-                throw new ApiException(400, 
+                throw new ApiException(400,
                     "Missing required parameter 'xLusidDriveFilename' when calling FilesApiExtensions->UploadAsStreamAsync");
             }
 
@@ -50,78 +52,70 @@ namespace Lusid.Drive.Sdk.Extensions
             // Verify that 'contentLength' is set
             if (contentLength == null)
             {
-                throw new ApiException(400, 
+                throw new ApiException(400,
                     "Missing required parameter 'contentLength' when calling FilesApiExtensions->UploadAsStreamAsync");
             }
 
             // Endpoint to POST new file
             const string fileApiEndpointPath = "./api/files";
-            
-            // Set default parameters
-            var localVarHeaderParams = new Dictionary<string, string>(api.Configuration.DefaultHeader);
 
-            // Set the Content-Type header
-            var localVarHttpContentTypes = new[] {"application/octet-stream"};
-            var localVarHttpContentType = api.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            var restClient = new ApiClient(api.Configuration.BasePath);
 
-            // Set the Accept header
-            var localVarHttpHeaderAccepts = new[] {"text/plain", "application/json", "text/json"};
-            var localVarHttpHeaderAccept = api.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            
-            if (localVarHttpHeaderAccept != null)
+            RequestOptions localVarRequestOptions = new RequestOptions();
+
+            String[] _contentTypes = new String[]
             {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-            }
-            
-            localVarHeaderParams.Add("x-lusid-drive-filename", api.Configuration.ApiClient.ParameterToString(xLusidDriveFilename));
-            localVarHeaderParams.Add("x-lusid-drive-path", api.Configuration.ApiClient.ParameterToString(xLusidDrivePath));
-            localVarHeaderParams.Add("Content-Length", api.Configuration.ApiClient.ParameterToString(contentLength));
-            
-            // Authentication (oauth2) required
-            if (!string.IsNullOrEmpty(api.Configuration.AccessToken))
+                "application/octet-stream"
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[]
             {
-                localVarHeaderParams["Authorization"] = "Bearer " + api.Configuration.AccessToken;
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.HeaderParameters.Add("Content-Length",
+                ClientUtils.ParameterToString(contentLength)); // header parameter
+            localVarRequestOptions.Data = body;
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(api.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + api.Configuration.AccessToken);
             }
 
             // Set the LUSID header
-            localVarHeaderParams["X-LUSID-Sdk-Language"] = "C#";
-            localVarHeaderParams["X-LUSID-Sdk-Version"] = typeof(FilesApiExtensions).Assembly.GetName().Version?.ToString();
+            localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Language", "C#");
+            localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Version",
+                typeof(FilesApiExtensions).Assembly.GetName().Version?.ToString());
 
-            // Get a rest client
-            var restClient = api.Configuration.ApiClient.RestClient;
-            
-            // Create a rest request with the created parameters
-            var restRequest = new RestRequest(fileApiEndpointPath, Method.POST) {Serializer = null};
+            var configuration = new Configuration();
 
-            // Create a parameters list for the HTTP request message 
-            var parameters = CreateParameters(body, localVarHeaderParams, localVarHttpContentType);
-            
-            // Create a HTTP request message with a stream as content
-            var requestMessage = restClient.HttpClientFactory.CreateRequestMessage(restClient, restRequest, 
-            parameters);
-            requestMessage.Content = new DefaultHttpContent(new StreamContent(body));
-            requestMessage.Content.Headers.Add("Content-Length", api.Configuration.ApiClient.ParameterToString(contentLength));
-            
-            // Get a HTTP client from the rest client's HTTP client factory
-            var httpClient = restClient.HttpClientFactory.CreateClient(restClient);
-            
-            // Send the HTTP request message
-            var httpResponseMessage = await httpClient.SendAsync(requestMessage, CancellationToken.None);
-            
-            // Convert the HTTP response message to a REST response message
-            var restResponseMessage =
-                await RestResponse.CreateResponse(restClient, restRequest, httpResponseMessage, CancellationToken.None);
+            var localVarResponse = await restClient
+                .PutAsync<StorageObject>(fileApiEndpointPath, localVarRequestOptions, configuration)
+                .ConfigureAwait(false);
 
             // Exception Handling
-            var exception = api.ExceptionFactory?.Invoke("UploadAsStreamAsync", restResponseMessage);
-            if (exception != null)
+            if (api.ExceptionFactory != null)
             {
-                throw exception;
+                Exception _exception = api.ExceptionFactory("UpdateFileContents", localVarResponse);
+                if (_exception != null) throw _exception;
             }
 
-            return (StorageObject) api.Configuration.ApiClient.Deserialize(restResponseMessage, typeof(StorageObject));
+            return localVarResponse.Data;
         }
-        
+
+
         /// <summary>
         ///     Downloads data to a file as a stream instead of as a byte array.
         ///     The function is asynchronous as RestSharp only offers asynchronous methods.
@@ -136,120 +130,56 @@ namespace Lusid.Drive.Sdk.Extensions
             // verify the required parameter 'id' is set
             if (id == null)
             {
-                throw new ApiException(400, "Missing required parameter 'id' when calling FilesApiExtensions->DownloadAsStreamAsync");
+                throw new ApiException(400,
+                    "Missing required parameter 'id' when calling FilesApiExtensions->DownloadAsStreamAsync");
             }
-
-            // Endpoint to GET new file
-            const string fileApiEndpointPath = "./api/files/{id}/contents";
             
-            // Set default parameters
-            var localVarPathParams = new Dictionary<string, string>();
-            var localVarHeaderParams = new Dictionary<string, string>(api.Configuration.DefaultHeader);
-
-            // Set the Content-Type header
-            string[] localVarHttpContentTypes = {};
-            string localVarHttpContentType = api.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // Set the Accept header
-            string[] localVarHttpHeaderAccepts = {"text/plain", "application/json", "text/json"};
-            var localVarHttpHeaderAccept = api.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             
-            if (localVarHttpHeaderAccept != null)
+            var restClient = new ApiClient(api.Configuration.BasePath);
+            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+
+            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(api.Configuration.AccessToken))
             {
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + api.Configuration.AccessToken);
             }
-            
-            // Set the Path Parameter
-            localVarPathParams.Add("id", api.Configuration.ApiClient.ParameterToString(id)); // path parameter
 
-            // Authentication (oauth2) required
-            if (!string.IsNullOrEmpty(api.Configuration.AccessToken))
+            //  set the LUSID header
+            localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Language", "C#");
+            localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Version", typeof(FilesApiExtensions).Assembly.GetName().Version?.ToString());
+
+            // make the HTTP request
+
+            var localVarResponse = await restClient.GetAsync<System.IO.Stream>("/api/files/{id}/contents", localVarRequestOptions, api.Configuration, CancellationToken.None).ConfigureAwait(false);
+
+            if (api.ExceptionFactory != null)
             {
-                localVarHeaderParams["Authorization"] = "Bearer " + api.Configuration.AccessToken;
+                Exception _exception = api.ExceptionFactory("DownloadFile", localVarResponse);
+                if (_exception != null) throw _exception;
             }
 
-            // Set the LUSID header
-            localVarHeaderParams["X-LUSID-Sdk-Language"] = "C#";
-            localVarHeaderParams["X-LUSID-Sdk-Version"] = typeof(FilesApiExtensions).Assembly.GetName().Version?.ToString();
-
-            // Get a rest client
-            var restClient = api.Configuration.ApiClient.RestClient;
-            
-            // Create a rest request with the created parameters
-            var restRequest = new RestRequest(fileApiEndpointPath, Method.GET) {Serializer = null};
-            foreach (var (key, value) in localVarPathParams)
-            {
-                restRequest.AddParameter(key, value, ParameterType.UrlSegment);
-            }
-
-            // Create a parameters list for the HTTP request message 
-            var parameters = CreateParameters(null, localVarHeaderParams, localVarHttpContentType);
-            
-            // Create a HTTP request message
-            var requestMessage = restClient.HttpClientFactory.CreateRequestMessage(restClient, restRequest, 
-            parameters);
-
-            // Get a HTTP client from the rest client's HTTP client factory
-            var httpClient = restClient.HttpClientFactory.CreateClient(restClient);
-            
-            // Send the HTTP request message
-            var httpResponseMessage = await httpClient.SendAsync(requestMessage, CancellationToken.None);
-                
-            // Convert the HTTP response message to a REST response message
-            var restResponseMessage =
-                await RestResponse.CreateResponse(restClient, restRequest, httpResponseMessage, CancellationToken.None);
-
-            // Exception Handling
-            var exception = api.ExceptionFactory?.Invoke("DownloadAsStreamAsync", restResponseMessage);
-            if (exception != null)
-            {
-                throw exception;
-            }
-
-            return (Stream) api.Configuration.ApiClient.Deserialize(restResponseMessage, typeof(Stream));
+            return localVarResponse.Data;
         }
-
-        private static IList<Parameter> CreateParameters(
-            object postBody,
-            Dictionary<string, string> headerParams,
-            string contentType)
-        {
-            var parameters = new List<Parameter>();
-
-            // Add header parameters, except for the 'Content-Length' parameter - it's added directly to the
-            // HttpRequestMessage.Content property
-            foreach (var (key, value) in headerParams)
-            {
-                if (key != "Content-Length")
-                {
-                    parameters.Add(CreateParameter(key, value, ParameterType.HttpHeader));
-                }
-            }
-
-            // Add the stream as the body of the request
-            if (postBody != null)
-            {
-                parameters.Add(new Parameter
-                {
-                    Value = postBody, 
-                    Type = ParameterType.RequestBody, 
-                    ContentType = contentType
-                });
-            }
-
-            return parameters;
-        }
-
-        /// <summary>
-        ///     Create a parameter for creating a http request message
-        /// </summary>
-        /// <param name="name">Name of the parameter</param>
-        /// <param name="value">Value of the parameter</param>
-        /// <param name="type">Type of the parameter</param>
-        /// <returns>The newly created parameter</returns>
-        private static Parameter CreateParameter(string name, object value, ParameterType type)
-        {
-            return new Parameter {Name = name, Value = value, Type = type};
-        }
+        
     }
 }
