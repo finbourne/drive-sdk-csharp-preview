@@ -38,7 +38,7 @@ namespace Lusid.Drive.Sdk.Extensions
             // Verify that 'xLusidDriveFilename' is set
             if (xLusidDriveFilename == null)
             {
-                throw new ApiException(400, 
+                throw new ApiException(400,
                     "Missing required parameter 'xLusidDriveFilename' when calling FilesApiExtensions->UploadAsStreamAsync");
             }
 
@@ -52,7 +52,7 @@ namespace Lusid.Drive.Sdk.Extensions
             // Verify that 'contentLength' is set
             if (contentLength == null)
             {
-                throw new ApiException(400, 
+                throw new ApiException(400,
                     "Missing required parameter 'contentLength' when calling FilesApiExtensions->UploadAsStreamAsync");
             }
 
@@ -62,42 +62,49 @@ namespace Lusid.Drive.Sdk.Extensions
             var restClient = new ApiClient(api.Configuration.BasePath);
 
             RequestOptions localVarRequestOptions = new RequestOptions();
-            
-            String[] _contentTypes = new String[] {
+
+            String[] _contentTypes = new String[]
+            {
                 "application/octet-stream"
             };
 
             // to determine the Accept header
-            String[] _accepts = new String[] {
+            String[] _accepts = new String[]
+            {
                 "text/plain",
                 "application/json",
                 "text/json"
             };
 
             var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            if (localVarContentType != null)
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
             var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.HeaderParameters.Add("Content-Length", ClientUtils.ParameterToString(contentLength)); // header parameter
+            localVarRequestOptions.HeaderParameters.Add("Content-Length",
+                ClientUtils.ParameterToString(contentLength)); // header parameter
             localVarRequestOptions.Data = body;
-            
+
             // authentication (oauth2) required
             // oauth required
             if (!String.IsNullOrEmpty(api.Configuration.AccessToken))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + api.Configuration.AccessToken);
             }
-            
+
             // Set the LUSID header
             localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Language", "C#");
-            localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Version", typeof(FilesApiExtensions).Assembly.GetName().Version?.ToString());
-            
+            localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Version",
+                typeof(FilesApiExtensions).Assembly.GetName().Version?.ToString());
+
             var configuration = new Configuration();
-            
-            var localVarResponse = await restClient.PutAsync<StorageObject>(fileApiEndpointPath, localVarRequestOptions, configuration).ConfigureAwait(false);
-            
+
+            var localVarResponse = await restClient
+                .PutAsync<StorageObject>(fileApiEndpointPath, localVarRequestOptions, configuration)
+                .ConfigureAwait(false);
+
             // Exception Handling
             if (api.ExceptionFactory != null)
             {
@@ -107,5 +114,72 @@ namespace Lusid.Drive.Sdk.Extensions
 
             return localVarResponse.Data;
         }
+
+
+        /// <summary>
+        ///     Downloads data to a file as a stream instead of as a byte array.
+        ///     The function is asynchronous as RestSharp only offers asynchronous methods.
+        ///     This method was created in order to support file downloads as Streams as this is less taxing on memory
+        ///     than byte arrays. This would be better for large file downloads or in the case where multiple users are
+        ///     downloading at the same time, causing a lot of memory to be consumed.
+        /// </summary>
+        /// <param name="id">ID of the file to download</param>
+        /// <returns>The downloaded Stream as a Task</returns>
+        public static async Task<Stream> DownloadAsStreamAsync(this IFilesApi api, string id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+            {
+                throw new ApiException(400,
+                    "Missing required parameter 'id' when calling FilesApiExtensions->DownloadAsStreamAsync");
+            }
+            
+            
+            var restClient = new ApiClient(api.Configuration.BasePath);
+            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+
+            String[] _contentTypes = new String[] {
+            };
+
+            // to determine the Accept header
+            String[] _accepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+
+            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+
+            // authentication (oauth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(api.Configuration.AccessToken))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", "Bearer " + api.Configuration.AccessToken);
+            }
+
+            //  set the LUSID header
+            localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Language", "C#");
+            localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Version", typeof(FilesApiExtensions).Assembly.GetName().Version?.ToString());
+
+            // make the HTTP request
+
+            var localVarResponse = await restClient.GetAsync<System.IO.Stream>("/api/files/{id}/contents", localVarRequestOptions, api.Configuration, CancellationToken.None).ConfigureAwait(false);
+
+            if (api.ExceptionFactory != null)
+            {
+                Exception _exception = api.ExceptionFactory("DownloadFile", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse.Data;
+        }
+        
     }
 }
