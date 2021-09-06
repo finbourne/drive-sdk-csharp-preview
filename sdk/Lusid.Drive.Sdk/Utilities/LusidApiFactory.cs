@@ -52,7 +52,7 @@ namespace Lusid.Drive.Sdk.Utilities
                 BasePath = apiConfiguration.DriveUrl,
             };
             
-            configuration.AddDefaultHeader("X-LUSID-Application", apiConfiguration.ApplicationName);
+            configuration.DefaultHeaders.Add("X-LUSID-Application", apiConfiguration.ApplicationName);
 
             Init(configuration);
         }
