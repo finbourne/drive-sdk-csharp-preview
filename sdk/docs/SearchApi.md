@@ -7,15 +7,13 @@ Method | HTTP request | Description
 [**Search**](SearchApi.md#search) | **POST** /api/search | [BETA] Search for a file or folder with a given name and path
 
 
-
-## Search
-
+<a name="search"></a>
+# **Search**
 > PagedResourceListOfStorageObject Search (SearchBody searchBody, string page = null, List<string> sortBy = null, int? limit = null, string filter = null)
 
 [BETA] Search for a file or folder with a given name and path
 
 ### Example
-
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -29,11 +27,12 @@ namespace Example
     {
         public static void Main()
         {
-            Configuration.Default.BasePath = "https://fbn-ci.lusid.com/drive";
+            Configuration config = new Configuration();
+            config.BasePath = "https://fbn-ci.lusid.com/drive";
             // Configure OAuth2 access token for authorization: oauth2
-            Configuration.Default.AccessToken = "YOUR_ACCESS_TOKEN";
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
 
-            var apiInstance = new SearchApi(Configuration.Default);
+            var apiInstance = new SearchApi(config);
             var searchBody = new SearchBody(); // SearchBody | Search parameters
             var page = page_example;  // string |  (optional) 
             var sortBy = new List<string>(); // List<string> |  (optional) 
@@ -46,7 +45,7 @@ namespace Example
                 PagedResourceListOfStorageObject result = apiInstance.Search(searchBody, page, sortBy, limit, filter);
                 Debug.WriteLine(result);
             }
-            catch (ApiException e)
+            catch (ApiException  e)
             {
                 Debug.Print("Exception when calling SearchApi.Search: " + e.Message );
                 Debug.Print("Status Code: "+ e.ErrorCode);
@@ -58,7 +57,6 @@ namespace Example
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -78,8 +76,9 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json
+ - **Accept**: text/plain, application/json, text/json
+
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -88,8 +87,5 @@ Name | Type | Description  | Notes
 | **400** | The details of the input related failure |  -  |
 | **0** | Error response |  -  |
 
-[[Back to top]](#)
-[[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
