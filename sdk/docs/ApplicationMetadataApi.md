@@ -4,14 +4,14 @@ All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListAccessControlledResources**](ApplicationMetadataApi.md#listaccesscontrolledresources) | **GET** /api/metadata/access/resources | [EARLY ACCESS] Get resources available for access control
+[**ListAccessControlledResources**](ApplicationMetadataApi.md#listaccesscontrolledresources) | **GET** /api/metadata/access/resources | [EARLY ACCESS] ListAccessControlledResources: Get resources available for access control
 
 
 <a name="listaccesscontrolledresources"></a>
 # **ListAccessControlledResources**
 > ResourceListOfAccessControlledResource ListAccessControlledResources ()
 
-[EARLY ACCESS] Get resources available for access control
+[EARLY ACCESS] ListAccessControlledResources: Get resources available for access control
 
 Get the comprehensive set of resources that are available for access control
 
@@ -38,7 +38,7 @@ namespace Example
 
             try
             {
-                // [EARLY ACCESS] Get resources available for access control
+                // [EARLY ACCESS] ListAccessControlledResources: Get resources available for access control
                 ResourceListOfAccessControlledResource result = apiInstance.ListAccessControlledResources();
                 Debug.WriteLine(result);
             }

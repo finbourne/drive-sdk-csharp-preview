@@ -4,19 +4,19 @@ All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateFile**](FilesApi.md#createfile) | **POST** /api/files | [BETA] Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
-[**DeleteFile**](FilesApi.md#deletefile) | **DELETE** /api/files/{id} | [BETA] Deletes a file from Drive.
-[**DownloadFile**](FilesApi.md#downloadfile) | **GET** /api/files/{id}/contents | [BETA] Download the file from Drive.
-[**GetFile**](FilesApi.md#getfile) | **GET** /api/files/{id} | [BETA] Get a file stored in Drive.
-[**UpdateFileContents**](FilesApi.md#updatefilecontents) | **PUT** /api/files/{id}/contents | [BETA] Updates contents of a file in Drive.
-[**UpdateFileMetadata**](FilesApi.md#updatefilemetadata) | **PUT** /api/files/{id} | [BETA] Updates metadata for a file in Drive.
+[**CreateFile**](FilesApi.md#createfile) | **POST** /api/files | [BETA] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
+[**DeleteFile**](FilesApi.md#deletefile) | **DELETE** /api/files/{id} | [BETA] DeleteFile: Deletes a file from Drive.
+[**DownloadFile**](FilesApi.md#downloadfile) | **GET** /api/files/{id}/contents | [BETA] DownloadFile: Download the file from Drive.
+[**GetFile**](FilesApi.md#getfile) | **GET** /api/files/{id} | [BETA] GetFile: Get a file stored in Drive.
+[**UpdateFileContents**](FilesApi.md#updatefilecontents) | **PUT** /api/files/{id}/contents | [BETA] UpdateFileContents: Updates contents of a file in Drive.
+[**UpdateFileMetadata**](FilesApi.md#updatefilemetadata) | **PUT** /api/files/{id} | [BETA] UpdateFileMetadata: Updates metadata for a file in Drive.
 
 
 <a name="createfile"></a>
 # **CreateFile**
 > StorageObject CreateFile (string xLusidDriveFilename, string xLusidDrivePath, int contentLength, byte[] body)
 
-[BETA] Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
+[BETA] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
 
 ### Example
 ```csharp
@@ -45,7 +45,7 @@ namespace Example
 
             try
             {
-                // [BETA] Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
+                // [BETA] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
                 StorageObject result = apiInstance.CreateFile(xLusidDriveFilename, xLusidDrivePath, contentLength, body);
                 Debug.WriteLine(result);
             }
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 # **DeleteFile**
 > void DeleteFile (string id)
 
-[BETA] Deletes a file from Drive.
+[BETA] DeleteFile: Deletes a file from Drive.
 
 ### Example
 ```csharp
@@ -122,7 +122,7 @@ namespace Example
 
             try
             {
-                // [BETA] Deletes a file from Drive.
+                // [BETA] DeleteFile: Deletes a file from Drive.
                 apiInstance.DeleteFile(id);
             }
             catch (ApiException  e)
@@ -169,7 +169,7 @@ void (empty response body)
 # **DownloadFile**
 > System.IO.Stream DownloadFile (string id)
 
-[BETA] Download the file from Drive.
+[BETA] DownloadFile: Download the file from Drive.
 
 ### Example
 ```csharp
@@ -195,7 +195,7 @@ namespace Example
 
             try
             {
-                // [BETA] Download the file from Drive.
+                // [BETA] DownloadFile: Download the file from Drive.
                 System.IO.Stream result = apiInstance.DownloadFile(id);
                 Debug.WriteLine(result);
             }
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 # **GetFile**
 > StorageObject GetFile (string id)
 
-[BETA] Get a file stored in Drive.
+[BETA] GetFile: Get a file stored in Drive.
 
 ### Example
 ```csharp
@@ -271,7 +271,7 @@ namespace Example
 
             try
             {
-                // [BETA] Get a file stored in Drive.
+                // [BETA] GetFile: Get a file stored in Drive.
                 StorageObject result = apiInstance.GetFile(id);
                 Debug.WriteLine(result);
             }
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 # **UpdateFileContents**
 > StorageObject UpdateFileContents (string id, int contentLength, byte[] body)
 
-[BETA] Updates contents of a file in Drive.
+[BETA] UpdateFileContents: Updates contents of a file in Drive.
 
 ### Example
 ```csharp
@@ -347,7 +347,7 @@ namespace Example
 
             try
             {
-                // [BETA] Updates contents of a file in Drive.
+                // [BETA] UpdateFileContents: Updates contents of a file in Drive.
                 StorageObject result = apiInstance.UpdateFileContents(id, contentLength, body);
                 Debug.WriteLine(result);
             }
@@ -397,7 +397,7 @@ Name | Type | Description  | Notes
 # **UpdateFileMetadata**
 > StorageObject UpdateFileMetadata (string id, UpdateFile updateFile)
 
-[BETA] Updates metadata for a file in Drive.
+[BETA] UpdateFileMetadata: Updates metadata for a file in Drive.
 
 ### Example
 ```csharp
@@ -424,7 +424,7 @@ namespace Example
 
             try
             {
-                // [BETA] Updates metadata for a file in Drive.
+                // [BETA] UpdateFileMetadata: Updates metadata for a file in Drive.
                 StorageObject result = apiInstance.UpdateFileMetadata(id, updateFile);
                 Debug.WriteLine(result);
             }

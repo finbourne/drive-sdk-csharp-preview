@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.1.271",
+    "version": "0.1.272",
     "x-logo": {
       "url": "https://content.finbourne.com/LUSID-header.png",
       "backgroundColor": "#415464"
@@ -25,7 +25,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.",
+        "summary": "[BETA] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.",
         "operationId": "CreateFile",
         "parameters": [
           {
@@ -181,7 +181,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] Get a file stored in Drive.",
+        "summary": "[BETA] GetFile: Get a file stored in Drive.",
         "operationId": "GetFile",
         "parameters": [
           {
@@ -300,7 +300,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] Deletes a file from Drive.",
+        "summary": "[BETA] DeleteFile: Deletes a file from Drive.",
         "operationId": "DeleteFile",
         "parameters": [
           {
@@ -363,7 +363,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] Updates metadata for a file in Drive.",
+        "summary": "[BETA] UpdateFileMetadata: Updates metadata for a file in Drive.",
         "operationId": "UpdateFileMetadata",
         "parameters": [
           {
@@ -499,7 +499,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] Download the file from Drive.",
+        "summary": "[BETA] DownloadFile: Download the file from Drive.",
         "operationId": "DownloadFile",
         "parameters": [
           {
@@ -622,7 +622,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] Updates contents of a file in Drive.",
+        "summary": "[BETA] UpdateFileContents: Updates contents of a file in Drive.",
         "operationId": "UpdateFileContents",
         "parameters": [
           {
@@ -765,7 +765,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] List contents of root folder",
+        "summary": "[BETA] GetRootFolder: List contents of root folder",
         "operationId": "GetRootFolder",
         "parameters": [
           {
@@ -897,7 +897,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] Create a new folder in LUSID Drive",
+        "summary": "[BETA] CreateFolder: Create a new folder in LUSID Drive",
         "operationId": "CreateFolder",
         "requestBody": {
           "description": "A CreateFolder object that defines the name and path of the new folder",
@@ -1018,7 +1018,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] Get metadata of folder",
+        "summary": "[BETA] GetFolder: Get metadata of folder",
         "operationId": "GetFolder",
         "parameters": [
           {
@@ -1157,7 +1157,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] Update an existing folder's name, path",
+        "summary": "[BETA] UpdateFolder: Update an existing folder's name, path",
         "operationId": "UpdateFolder",
         "parameters": [
           {
@@ -1311,7 +1311,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] Delete a specified folder and all subfolders",
+        "summary": "[BETA] DeleteFolder: Delete a specified folder and all subfolders",
         "operationId": "DeleteFolder",
         "parameters": [
           {
@@ -1394,7 +1394,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] Move files to specified folder",
+        "summary": "[BETA] MoveFolder: Move files to specified folder",
         "operationId": "MoveFolder",
         "parameters": [
           {
@@ -1558,7 +1558,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] List contents of a folder",
+        "summary": "[BETA] GetFolderContents: List contents of a folder",
         "operationId": "GetFolderContents",
         "parameters": [
           {
@@ -1725,7 +1725,7 @@
         "tags": [
           "Application Metadata"
         ],
-        "summary": "[EARLY ACCESS] Get resources available for access control",
+        "summary": "[EARLY ACCESS] ListAccessControlledResources: Get resources available for access control",
         "description": "Get the comprehensive set of resources that are available for access control",
         "operationId": "ListAccessControlledResources",
         "responses": {
@@ -1773,7 +1773,7 @@
         "tags": [
           "Search"
         ],
-        "summary": "[BETA] Search for a file or folder with a given name and path",
+        "summary": "[BETA] Search: Search for a file or folder with a given name and path",
         "operationId": "Search",
         "parameters": [
           {

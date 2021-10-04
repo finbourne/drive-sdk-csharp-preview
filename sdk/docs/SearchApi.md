@@ -4,14 +4,14 @@ All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Search**](SearchApi.md#search) | **POST** /api/search | [BETA] Search for a file or folder with a given name and path
+[**Search**](SearchApi.md#search) | **POST** /api/search | [BETA] Search: Search for a file or folder with a given name and path
 
 
 <a name="search"></a>
 # **Search**
 > PagedResourceListOfStorageObject Search (SearchBody searchBody, string page = null, List<string> sortBy = null, int? limit = null, string filter = null)
 
-[BETA] Search for a file or folder with a given name and path
+[BETA] Search: Search for a file or folder with a given name and path
 
 ### Example
 ```csharp
@@ -41,7 +41,7 @@ namespace Example
 
             try
             {
-                // [BETA] Search for a file or folder with a given name and path
+                // [BETA] Search: Search for a file or folder with a given name and path
                 PagedResourceListOfStorageObject result = apiInstance.Search(searchBody, page, sortBy, limit, filter);
                 Debug.WriteLine(result);
             }
