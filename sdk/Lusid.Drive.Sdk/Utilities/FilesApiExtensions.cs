@@ -86,6 +86,8 @@ namespace Lusid.Drive.Sdk.Extensions
             localVarRequestOptions.HeaderParameters.Add("Content-Length",
                 ClientUtils.ParameterToString(contentLength)); // header parameter
             localVarRequestOptions.Data = body;
+            localVarRequestOptions.HeaderParameters.Add("x-lusid-drive-filename", xLusidDriveFilename);
+            localVarRequestOptions.HeaderParameters.Add("x-lusid-drive-path", xLusidDrivePath);
 
             // authentication (oauth2) required
             // oauth required
@@ -102,7 +104,7 @@ namespace Lusid.Drive.Sdk.Extensions
             var configuration = new Configuration();
 
             var localVarResponse = await restClient
-                .PutAsync<StorageObject>(fileApiEndpointPath, localVarRequestOptions, configuration)
+                .PostAsync<StorageObject>(fileApiEndpointPath, localVarRequestOptions, configuration)
                 .ConfigureAwait(false);
 
             // Exception Handling
