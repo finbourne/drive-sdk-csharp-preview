@@ -1,4 +1,4 @@
-# Lusid.Drive.Sdk.Model.AccessControlledResource
+# Finbourne.Drive.Sdk.Model.AccessControlledResource
 
 ## Properties
 

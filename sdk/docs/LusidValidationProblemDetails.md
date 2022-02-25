@@ -1,4 +1,4 @@
-# Lusid.Drive.Sdk.Model.LusidValidationProblemDetails
+# Finbourne.Drive.Sdk.Model.LusidValidationProblemDetails
 
 ## Properties
 

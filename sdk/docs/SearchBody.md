@@ -1,4 +1,4 @@
-# Lusid.Drive.Sdk.Model.SearchBody
+# Finbourne.Drive.Sdk.Model.SearchBody
 DTO representing the search query
 
 ## Properties

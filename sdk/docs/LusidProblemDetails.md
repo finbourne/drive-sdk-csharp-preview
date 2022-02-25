@@ -1,4 +1,4 @@
-# Lusid.Drive.Sdk.Model.LusidProblemDetails
+# Finbourne.Drive.Sdk.Model.LusidProblemDetails
 
 ## Properties
 

@@ -1,5 +1,5 @@
 
-# Lusid.Drive.Sdk.Model.EntityTagHeaderValue
+# Finbourne.Drive.Sdk.Model.EntityTagHeaderValue
 
 ## Properties
 

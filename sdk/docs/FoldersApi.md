@@ -1,4 +1,4 @@
-# Lusid.Drive.Sdk.Api.FoldersApi
+# Finbourne.Drive.Sdk.Api.FoldersApi
 
 All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
@@ -23,9 +23,9 @@ Method | HTTP request | Description
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Lusid.Drive.Sdk.Api;
-using Lusid.Drive.Sdk.Client;
-using Lusid.Drive.Sdk.Model;
+using Finbourne.Drive.Sdk.Api;
+using Finbourne.Drive.Sdk.Client;
+using Finbourne.Drive.Sdk.Model;
 
 namespace Example
 {
@@ -97,9 +97,9 @@ Name | Type | Description  | Notes
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Lusid.Drive.Sdk.Api;
-using Lusid.Drive.Sdk.Client;
-using Lusid.Drive.Sdk.Model;
+using Finbourne.Drive.Sdk.Api;
+using Finbourne.Drive.Sdk.Client;
+using Finbourne.Drive.Sdk.Model;
 
 namespace Example
 {
@@ -171,9 +171,9 @@ void (empty response body)
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Lusid.Drive.Sdk.Api;
-using Lusid.Drive.Sdk.Client;
-using Lusid.Drive.Sdk.Model;
+using Finbourne.Drive.Sdk.Api;
+using Finbourne.Drive.Sdk.Client;
+using Finbourne.Drive.Sdk.Model;
 
 namespace Example
 {
@@ -246,9 +246,9 @@ Name | Type | Description  | Notes
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Lusid.Drive.Sdk.Api;
-using Lusid.Drive.Sdk.Client;
-using Lusid.Drive.Sdk.Model;
+using Finbourne.Drive.Sdk.Api;
+using Finbourne.Drive.Sdk.Client;
+using Finbourne.Drive.Sdk.Model;
 
 namespace Example
 {
@@ -331,9 +331,9 @@ Name | Type | Description  | Notes
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Lusid.Drive.Sdk.Api;
-using Lusid.Drive.Sdk.Client;
-using Lusid.Drive.Sdk.Model;
+using Finbourne.Drive.Sdk.Api;
+using Finbourne.Drive.Sdk.Client;
+using Finbourne.Drive.Sdk.Model;
 
 namespace Example
 {
@@ -413,9 +413,9 @@ Name | Type | Description  | Notes
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Lusid.Drive.Sdk.Api;
-using Lusid.Drive.Sdk.Client;
-using Lusid.Drive.Sdk.Model;
+using Finbourne.Drive.Sdk.Api;
+using Finbourne.Drive.Sdk.Client;
+using Finbourne.Drive.Sdk.Model;
 
 namespace Example
 {
@@ -495,9 +495,9 @@ Name | Type | Description  | Notes
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Lusid.Drive.Sdk.Api;
-using Lusid.Drive.Sdk.Client;
-using Lusid.Drive.Sdk.Model;
+using Finbourne.Drive.Sdk.Api;
+using Finbourne.Drive.Sdk.Client;
+using Finbourne.Drive.Sdk.Model;
 
 namespace Example
 {

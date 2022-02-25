@@ -1,5 +1,5 @@
 
-# Lusid.Drive.Sdk.Model.FileContentResult
+# Finbourne.Drive.Sdk.Model.FileContentResult
 
 ## Properties
 
