@@ -1,4 +1,4 @@
-# Lusid.Drive.Sdk.Model.UpdateFolder
+# Finbourne.Drive.Sdk.Model.UpdateFolder
 DTO representing the update of the name or path of a file
 
 ## Properties

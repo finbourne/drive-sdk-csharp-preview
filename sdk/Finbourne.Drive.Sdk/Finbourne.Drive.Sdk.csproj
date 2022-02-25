@@ -1,29 +1,26 @@
 ﻿
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <Version>0.1.304</Version>
-    <PackageId>Lusid.Drive.Sdk.Preview</PackageId>
+    <PackageId>Finbourne.Drive.Sdk.Preview</PackageId>
     <Authors>engineering@finbourne.com</Authors>
     <Company>FINBOURNE Technology Limited</Company>
-    <Product>LUSID Drive</Product>
-    <Description>LUSID Drive SDK</Description>
-    <RepositoryUrl>https://github.com/finbourne/drive-sdk-csharp</RepositoryUrl>
+    <Product>LUSID</Product>
+    <Description>FINBOURNE Drive secure file repository and manager for collaboration SDK</Description>
+    <RepositoryUrl>https://github.com/finbourne/drive-sdk-csharp-preview</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+    <DocumentationFile></DocumentationFile>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
-
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <WarningsAsErrors></WarningsAsErrors>
     <NoWarn>1701;1702;CS0472;CS1573</NoWarn>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-  </PropertyGroup>
-  
+  </PropertyGroup>  
   <ItemGroup>
     <PackageReference Include="LanguageExt.Core" Version="3.4.15" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
@@ -35,11 +32,9 @@
     <PackageReference Include="JsonSubTypes" Version="1.8.0" />
     <PackageReference Include="Polly" Version="7.2.1" />
     <PackageReference Include="RestSharp" Version="106.11.7" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
-
   <ItemGroup>
-    <None Include="../../LICENSE.md" Pack="true" PackagePath="LICENSE.md"/>
-  </ItemGroup>
-  
+    <None Include="../../LICENSE.md" Pack="true" PackagePath="LICENSE.md" />
+  </ItemGroup>  
 </Project>
