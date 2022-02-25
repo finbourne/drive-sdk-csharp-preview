@@ -11,7 +11,7 @@
 
 using System.Collections.Generic;
 
-namespace Lusid.Drive.Sdk.Client
+namespace Finbourne.Drive.Sdk.Client
 {
     /// <summary>
     /// <see cref="GlobalConfiguration"/> provides a compile-time extension point for globally configuring

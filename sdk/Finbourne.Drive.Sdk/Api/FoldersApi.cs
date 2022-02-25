@@ -15,10 +15,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
-using Lusid.Drive.Sdk.Client;
-using Lusid.Drive.Sdk.Model;
+using Finbourne.Drive.Sdk.Client;
+using Finbourne.Drive.Sdk.Model;
 
-namespace Lusid.Drive.Sdk.Api
+namespace Finbourne.Drive.Sdk.Api
 {
 
     /// <summary>
@@ -30,7 +30,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] CreateFolder: Create a new folder in LUSID Drive
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createFolder">A CreateFolder object that defines the name and path of the new folder</param>
         /// <returns>StorageObject</returns>
         StorageObject CreateFolder(CreateFolder createFolder);
@@ -41,14 +41,14 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createFolder">A CreateFolder object that defines the name and path of the new folder</param>
         /// <returns>ApiResponse of StorageObject</returns>
         ApiResponse<StorageObject> CreateFolderWithHttpInfo(CreateFolder createFolder);
         /// <summary>
         /// [BETA] DeleteFolder: Delete a specified folder and all subfolders
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <returns></returns>
         void DeleteFolder(string id);
@@ -59,14 +59,14 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteFolderWithHttpInfo(string id);
         /// <summary>
         /// [BETA] GetFolder: Get metadata of folder
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <returns>StorageObject</returns>
         StorageObject GetFolder(string id);
@@ -77,14 +77,14 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <returns>ApiResponse of StorageObject</returns>
         ApiResponse<StorageObject> GetFolderWithHttpInfo(string id);
         /// <summary>
         /// [BETA] GetFolderContents: List contents of a folder
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
@@ -100,7 +100,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
@@ -112,7 +112,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] GetRootFolder: List contents of root folder
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
@@ -127,7 +127,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
@@ -138,7 +138,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] MoveFolder: Move files to specified folder
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder where the files should be moved</param>
         /// <param name="requestBody">Enumerable of unique IDs of files that should be moved</param>
         /// <param name="overwrite">True if the destination has file with same name if should be overwritten (optional, default to false)</param>
@@ -152,7 +152,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder where the files should be moved</param>
         /// <param name="requestBody">Enumerable of unique IDs of files that should be moved</param>
         /// <param name="overwrite">True if the destination has file with same name if should be overwritten (optional, default to false)</param>
@@ -162,7 +162,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] UpdateFolder: Update an existing folder&#39;s name, path
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="updateFolder">An UpdateFolder object that defines the new name or path of the folder</param>
         /// <returns>StorageObject</returns>
@@ -174,7 +174,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="updateFolder">An UpdateFolder object that defines the new name or path of the folder</param>
         /// <returns>ApiResponse of StorageObject</returns>
@@ -194,7 +194,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createFolder">A CreateFolder object that defines the name and path of the new folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StorageObject</returns>
@@ -206,7 +206,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createFolder">A CreateFolder object that defines the name and path of the new folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
@@ -217,7 +217,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -229,7 +229,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
@@ -240,7 +240,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StorageObject</returns>
@@ -252,7 +252,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
@@ -263,7 +263,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
@@ -280,7 +280,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
@@ -296,7 +296,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
@@ -312,7 +312,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
@@ -327,7 +327,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder where the files should be moved</param>
         /// <param name="requestBody">Enumerable of unique IDs of files that should be moved</param>
         /// <param name="overwrite">True if the destination has file with same name if should be overwritten (optional, default to false)</param>
@@ -342,7 +342,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder where the files should be moved</param>
         /// <param name="requestBody">Enumerable of unique IDs of files that should be moved</param>
         /// <param name="overwrite">True if the destination has file with same name if should be overwritten (optional, default to false)</param>
@@ -356,7 +356,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="updateFolder">An UpdateFolder object that defines the new name or path of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -369,7 +369,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// 
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="updateFolder">An UpdateFolder object that defines the new name or path of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -391,7 +391,7 @@ namespace Lusid.Drive.Sdk.Api
     /// </summary>
     public partial class FoldersApi : IFoldersApi
     {
-        private Lusid.Drive.Sdk.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Finbourne.Drive.Sdk.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FoldersApi"/> class.
@@ -407,13 +407,13 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns></returns>
         public FoldersApi(String basePath)
         {
-            this.Configuration = Lusid.Drive.Sdk.Client.Configuration.MergeConfigurations(
-                Lusid.Drive.Sdk.Client.GlobalConfiguration.Instance,
-                new Lusid.Drive.Sdk.Client.Configuration { BasePath = basePath }
+            this.Configuration = Finbourne.Drive.Sdk.Client.Configuration.MergeConfigurations(
+                Finbourne.Drive.Sdk.Client.GlobalConfiguration.Instance,
+                new Finbourne.Drive.Sdk.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new Lusid.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Lusid.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Lusid.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Finbourne.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Finbourne.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Finbourne.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -422,14 +422,14 @@ namespace Lusid.Drive.Sdk.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public FoldersApi(Lusid.Drive.Sdk.Client.Configuration configuration)
+        public FoldersApi(Finbourne.Drive.Sdk.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Configuration = configuration;
-            this.Client = new Lusid.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Lusid.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Lusid.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Finbourne.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Finbourne.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Finbourne.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -439,7 +439,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public FoldersApi(Lusid.Drive.Sdk.Client.ISynchronousClient client, Lusid.Drive.Sdk.Client.IAsynchronousClient asyncClient, Lusid.Drive.Sdk.Client.IReadableConfiguration configuration)
+        public FoldersApi(Finbourne.Drive.Sdk.Client.ISynchronousClient client, Finbourne.Drive.Sdk.Client.IAsynchronousClient asyncClient, Finbourne.Drive.Sdk.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -448,18 +448,18 @@ namespace Lusid.Drive.Sdk.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Lusid.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Finbourne.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Lusid.Drive.Sdk.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Finbourne.Drive.Sdk.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Lusid.Drive.Sdk.Client.ISynchronousClient Client { get; set; }
+        public Finbourne.Drive.Sdk.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -474,12 +474,12 @@ namespace Lusid.Drive.Sdk.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Lusid.Drive.Sdk.Client.IReadableConfiguration Configuration { get; set; }
+        public Finbourne.Drive.Sdk.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Lusid.Drive.Sdk.Client.ExceptionFactory ExceptionFactory
+        public Finbourne.Drive.Sdk.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -495,28 +495,28 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] CreateFolder: Create a new folder in LUSID Drive 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createFolder">A CreateFolder object that defines the name and path of the new folder</param>
         /// <returns>StorageObject</returns>
         public StorageObject CreateFolder(CreateFolder createFolder)
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = CreateFolderWithHttpInfo(createFolder);
+            Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = CreateFolderWithHttpInfo(createFolder);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] CreateFolder: Create a new folder in LUSID Drive 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createFolder">A CreateFolder object that defines the name and path of the new folder</param>
         /// <returns>ApiResponse of StorageObject</returns>
-        public Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> CreateFolderWithHttpInfo(CreateFolder createFolder)
+        public Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject> CreateFolderWithHttpInfo(CreateFolder createFolder)
         {
             // verify the required parameter 'createFolder' is set
             if (createFolder == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'createFolder' when calling FoldersApi->CreateFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'createFolder' when calling FoldersApi->CreateFolder");
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
                 "application/json"
@@ -529,10 +529,10 @@ namespace Lusid.Drive.Sdk.Api
                 "text/json"
             };
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = createFolder;
@@ -563,31 +563,31 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] CreateFolder: Create a new folder in LUSID Drive 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createFolder">A CreateFolder object that defines the name and path of the new folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StorageObject</returns>
         public async System.Threading.Tasks.Task<StorageObject> CreateFolderAsync(CreateFolder createFolder, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = await CreateFolderWithHttpInfoAsync(createFolder, cancellationToken).ConfigureAwait(false);
+            Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = await CreateFolderWithHttpInfoAsync(createFolder, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] CreateFolder: Create a new folder in LUSID Drive 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createFolder">A CreateFolder object that defines the name and path of the new folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
-        public async System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<StorageObject>> CreateFolderWithHttpInfoAsync(CreateFolder createFolder, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject>> CreateFolderWithHttpInfoAsync(CreateFolder createFolder, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'createFolder' is set
             if (createFolder == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'createFolder' when calling FoldersApi->CreateFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'createFolder' when calling FoldersApi->CreateFolder");
 
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
                 "application/json"
@@ -601,10 +601,10 @@ namespace Lusid.Drive.Sdk.Api
             };
 
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.Data = createFolder;
@@ -636,7 +636,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] DeleteFolder: Delete a specified folder and all subfolders 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <returns></returns>
         public void DeleteFolder(string id)
@@ -647,16 +647,16 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] DeleteFolder: Delete a specified folder and all subfolders 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public Lusid.Drive.Sdk.Client.ApiResponse<Object> DeleteFolderWithHttpInfo(string id)
+        public Finbourne.Drive.Sdk.Client.ApiResponse<Object> DeleteFolderWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->DeleteFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->DeleteFolder");
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
             };
@@ -668,13 +668,13 @@ namespace Lusid.Drive.Sdk.Api
                 "text/json"
             };
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -702,7 +702,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] DeleteFolder: Delete a specified folder and all subfolders 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
@@ -714,18 +714,18 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] DeleteFolder: Delete a specified folder and all subfolders 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<Object>> DeleteFolderWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Finbourne.Drive.Sdk.Client.ApiResponse<Object>> DeleteFolderWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->DeleteFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->DeleteFolder");
 
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
             };
@@ -738,13 +738,13 @@ namespace Lusid.Drive.Sdk.Api
             };
 
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -773,28 +773,28 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] GetFolder: Get metadata of folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <returns>StorageObject</returns>
         public StorageObject GetFolder(string id)
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = GetFolderWithHttpInfo(id);
+            Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = GetFolderWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] GetFolder: Get metadata of folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <returns>ApiResponse of StorageObject</returns>
-        public Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> GetFolderWithHttpInfo(string id)
+        public Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject> GetFolderWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->GetFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->GetFolder");
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
             };
@@ -806,13 +806,13 @@ namespace Lusid.Drive.Sdk.Api
                 "text/json"
             };
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -840,31 +840,31 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] GetFolder: Get metadata of folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StorageObject</returns>
         public async System.Threading.Tasks.Task<StorageObject> GetFolderAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = await GetFolderWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = await GetFolderWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] GetFolder: Get metadata of folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
-        public async System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<StorageObject>> GetFolderWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject>> GetFolderWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->GetFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->GetFolder");
 
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
             };
@@ -877,13 +877,13 @@ namespace Lusid.Drive.Sdk.Api
             };
 
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (oauth2) required
             // oauth required
@@ -912,7 +912,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] GetFolderContents: List contents of a folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
@@ -922,14 +922,14 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>PagedResourceListOfStorageObject</returns>
         public PagedResourceListOfStorageObject GetFolderContents(string id, string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string))
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = GetFolderContentsWithHttpInfo(id, page, sortBy, start, limit, filter);
+            Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = GetFolderContentsWithHttpInfo(id, page, sortBy, start, limit, filter);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] GetFolderContents: List contents of a folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
@@ -937,13 +937,13 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
         /// <param name="filter">Expression to filter the result set. (optional, default to &quot;&quot;)</param>
         /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
-        public Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> GetFolderContentsWithHttpInfo(string id, string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string))
+        public Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> GetFolderContentsWithHttpInfo(string id, string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->GetFolderContents");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->GetFolderContents");
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
             };
@@ -955,32 +955,32 @@ namespace Lusid.Drive.Sdk.Api
                 "text/json"
             };
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (page != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "page", page));
             }
             if (sortBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("multi", "sortBy", sortBy));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("multi", "sortBy", sortBy));
             }
             if (start != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "start", start));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "start", start));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (filter != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
             }
 
             // authentication (oauth2) required
@@ -1009,7 +1009,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] GetFolderContents: List contents of a folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
@@ -1020,14 +1020,14 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>Task of PagedResourceListOfStorageObject</returns>
         public async System.Threading.Tasks.Task<PagedResourceListOfStorageObject> GetFolderContentsAsync(string id, string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = await GetFolderContentsWithHttpInfoAsync(id, page, sortBy, start, limit, filter, cancellationToken).ConfigureAwait(false);
+            Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = await GetFolderContentsWithHttpInfoAsync(id, page, sortBy, start, limit, filter, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] GetFolderContents: List contents of a folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
@@ -1036,14 +1036,14 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="filter">Expression to filter the result set. (optional, default to &quot;&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
-        public async System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> GetFolderContentsWithHttpInfoAsync(string id, string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> GetFolderContentsWithHttpInfoAsync(string id, string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->GetFolderContents");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->GetFolderContents");
 
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
             };
@@ -1056,32 +1056,32 @@ namespace Lusid.Drive.Sdk.Api
             };
 
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (page != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "page", page));
             }
             if (sortBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("multi", "sortBy", sortBy));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("multi", "sortBy", sortBy));
             }
             if (start != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "start", start));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "start", start));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (filter != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
             }
 
             // authentication (oauth2) required
@@ -1111,7 +1111,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] GetRootFolder: List contents of root folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
@@ -1120,23 +1120,23 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>PagedResourceListOfStorageObject</returns>
         public PagedResourceListOfStorageObject GetRootFolder(string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string))
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = GetRootFolderWithHttpInfo(page, sortBy, start, limit, filter);
+            Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = GetRootFolderWithHttpInfo(page, sortBy, start, limit, filter);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] GetRootFolder: List contents of root folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
         /// <param name="limit">When paginating, limit the number of returned results to this many. (optional)</param>
         /// <param name="filter">Expression to filter the result set. (optional, default to &quot;true&quot;)</param>
         /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
-        public Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> GetRootFolderWithHttpInfo(string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string))
+        public Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> GetRootFolderWithHttpInfo(string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string))
         {
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
             };
@@ -1148,31 +1148,31 @@ namespace Lusid.Drive.Sdk.Api
                 "text/json"
             };
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (page != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "page", page));
             }
             if (sortBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("multi", "sortBy", sortBy));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("multi", "sortBy", sortBy));
             }
             if (start != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "start", start));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "start", start));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (filter != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
             }
 
             // authentication (oauth2) required
@@ -1201,7 +1201,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] GetRootFolder: List contents of root folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
@@ -1211,14 +1211,14 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>Task of PagedResourceListOfStorageObject</returns>
         public async System.Threading.Tasks.Task<PagedResourceListOfStorageObject> GetRootFolderAsync(string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = await GetRootFolderWithHttpInfoAsync(page, sortBy, start, limit, filter, cancellationToken).ConfigureAwait(false);
+            Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = await GetRootFolderWithHttpInfoAsync(page, sortBy, start, limit, filter, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] GetRootFolder: List contents of root folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="page">The pagination token to use to continue listing contents from a previous call to list contents.              This value is returned from the previous call. If a pagination token is provided the sortBy and filter fields              must not have changed since the original request. Also, if set, a start value cannot be provided. (optional)</param>
         /// <param name="sortBy">Order the results by these fields. Use use the &#39;-&#39; sign to denote descending order. (optional)</param>
         /// <param name="start">When paginating, skip this number of results. (optional)</param>
@@ -1226,10 +1226,10 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="filter">Expression to filter the result set. (optional, default to &quot;true&quot;)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
-        public async System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> GetRootFolderWithHttpInfoAsync(string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> GetRootFolderWithHttpInfoAsync(string page = default(string), List<string> sortBy = default(List<string>), int? start = default(int?), int? limit = default(int?), string filter = default(string), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
             };
@@ -1242,31 +1242,31 @@ namespace Lusid.Drive.Sdk.Api
             };
 
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             if (page != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "page", page));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "page", page));
             }
             if (sortBy != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("multi", "sortBy", sortBy));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("multi", "sortBy", sortBy));
             }
             if (start != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "start", start));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "start", start));
             }
             if (limit != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "limit", limit));
             }
             if (filter != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "filter", filter));
             }
 
             // authentication (oauth2) required
@@ -1296,7 +1296,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] MoveFolder: Move files to specified folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder where the files should be moved</param>
         /// <param name="requestBody">Enumerable of unique IDs of files that should be moved</param>
         /// <param name="overwrite">True if the destination has file with same name if should be overwritten (optional, default to false)</param>
@@ -1304,30 +1304,30 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>PagedResourceListOfStorageObject</returns>
         public PagedResourceListOfStorageObject MoveFolder(string id, List<string> requestBody, bool? overwrite = default(bool?), bool? deleteSource = default(bool?))
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = MoveFolderWithHttpInfo(id, requestBody, overwrite, deleteSource);
+            Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = MoveFolderWithHttpInfo(id, requestBody, overwrite, deleteSource);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] MoveFolder: Move files to specified folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder where the files should be moved</param>
         /// <param name="requestBody">Enumerable of unique IDs of files that should be moved</param>
         /// <param name="overwrite">True if the destination has file with same name if should be overwritten (optional, default to false)</param>
         /// <param name="deleteSource">If true after moving the original file is deleted (optional, default to false)</param>
         /// <returns>ApiResponse of PagedResourceListOfStorageObject</returns>
-        public Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> MoveFolderWithHttpInfo(string id, List<string> requestBody, bool? overwrite = default(bool?), bool? deleteSource = default(bool?))
+        public Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> MoveFolderWithHttpInfo(string id, List<string> requestBody, bool? overwrite = default(bool?), bool? deleteSource = default(bool?))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->MoveFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->MoveFolder");
 
             // verify the required parameter 'requestBody' is set
             if (requestBody == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'requestBody' when calling FoldersApi->MoveFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'requestBody' when calling FoldersApi->MoveFolder");
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
                 "application/json"
@@ -1340,20 +1340,20 @@ namespace Lusid.Drive.Sdk.Api
                 "text/json"
             };
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (overwrite != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "overwrite", overwrite));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "overwrite", overwrite));
             }
             if (deleteSource != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "deleteSource", deleteSource));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "deleteSource", deleteSource));
             }
             localVarRequestOptions.Data = requestBody;
 
@@ -1383,7 +1383,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] MoveFolder: Move files to specified folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder where the files should be moved</param>
         /// <param name="requestBody">Enumerable of unique IDs of files that should be moved</param>
         /// <param name="overwrite">True if the destination has file with same name if should be overwritten (optional, default to false)</param>
@@ -1392,32 +1392,32 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns>Task of PagedResourceListOfStorageObject</returns>
         public async System.Threading.Tasks.Task<PagedResourceListOfStorageObject> MoveFolderAsync(string id, List<string> requestBody, bool? overwrite = default(bool?), bool? deleteSource = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = await MoveFolderWithHttpInfoAsync(id, requestBody, overwrite, deleteSource, cancellationToken).ConfigureAwait(false);
+            Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject> localVarResponse = await MoveFolderWithHttpInfoAsync(id, requestBody, overwrite, deleteSource, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] MoveFolder: Move files to specified folder 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder where the files should be moved</param>
         /// <param name="requestBody">Enumerable of unique IDs of files that should be moved</param>
         /// <param name="overwrite">True if the destination has file with same name if should be overwritten (optional, default to false)</param>
         /// <param name="deleteSource">If true after moving the original file is deleted (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PagedResourceListOfStorageObject)</returns>
-        public async System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> MoveFolderWithHttpInfoAsync(string id, List<string> requestBody, bool? overwrite = default(bool?), bool? deleteSource = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Finbourne.Drive.Sdk.Client.ApiResponse<PagedResourceListOfStorageObject>> MoveFolderWithHttpInfoAsync(string id, List<string> requestBody, bool? overwrite = default(bool?), bool? deleteSource = default(bool?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->MoveFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->MoveFolder");
 
             // verify the required parameter 'requestBody' is set
             if (requestBody == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'requestBody' when calling FoldersApi->MoveFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'requestBody' when calling FoldersApi->MoveFolder");
 
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
                 "application/json"
@@ -1431,20 +1431,20 @@ namespace Lusid.Drive.Sdk.Api
             };
 
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
             if (overwrite != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "overwrite", overwrite));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "overwrite", overwrite));
             }
             if (deleteSource != null)
             {
-                localVarRequestOptions.QueryParameters.Add(Lusid.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "deleteSource", deleteSource));
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToMultiMap("", "deleteSource", deleteSource));
             }
             localVarRequestOptions.Data = requestBody;
 
@@ -1475,34 +1475,34 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] UpdateFolder: Update an existing folder&#39;s name, path 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="updateFolder">An UpdateFolder object that defines the new name or path of the folder</param>
         /// <returns>StorageObject</returns>
         public StorageObject UpdateFolder(string id, UpdateFolder updateFolder)
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = UpdateFolderWithHttpInfo(id, updateFolder);
+            Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = UpdateFolderWithHttpInfo(id, updateFolder);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] UpdateFolder: Update an existing folder&#39;s name, path 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="updateFolder">An UpdateFolder object that defines the new name or path of the folder</param>
         /// <returns>ApiResponse of StorageObject</returns>
-        public Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> UpdateFolderWithHttpInfo(string id, UpdateFolder updateFolder)
+        public Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject> UpdateFolderWithHttpInfo(string id, UpdateFolder updateFolder)
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->UpdateFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->UpdateFolder");
 
             // verify the required parameter 'updateFolder' is set
             if (updateFolder == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'updateFolder' when calling FoldersApi->UpdateFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'updateFolder' when calling FoldersApi->UpdateFolder");
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
                 "application/json"
@@ -1515,13 +1515,13 @@ namespace Lusid.Drive.Sdk.Api
                 "text/json"
             };
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateFolder;
 
             // authentication (oauth2) required
@@ -1550,37 +1550,37 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [BETA] UpdateFolder: Update an existing folder&#39;s name, path 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="updateFolder">An UpdateFolder object that defines the new name or path of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of StorageObject</returns>
         public async System.Threading.Tasks.Task<StorageObject> UpdateFolderAsync(string id, UpdateFolder updateFolder, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = await UpdateFolderWithHttpInfoAsync(id, updateFolder, cancellationToken).ConfigureAwait(false);
+            Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject> localVarResponse = await UpdateFolderWithHttpInfoAsync(id, updateFolder, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [BETA] UpdateFolder: Update an existing folder&#39;s name, path 
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the folder</param>
         /// <param name="updateFolder">An UpdateFolder object that defines the new name or path of the folder</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (StorageObject)</returns>
-        public async System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<StorageObject>> UpdateFolderWithHttpInfoAsync(string id, UpdateFolder updateFolder, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Finbourne.Drive.Sdk.Client.ApiResponse<StorageObject>> UpdateFolderWithHttpInfoAsync(string id, UpdateFolder updateFolder, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
             // verify the required parameter 'id' is set
             if (id == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->UpdateFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'id' when calling FoldersApi->UpdateFolder");
 
             // verify the required parameter 'updateFolder' is set
             if (updateFolder == null)
-                throw new Lusid.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'updateFolder' when calling FoldersApi->UpdateFolder");
+                throw new Finbourne.Drive.Sdk.Client.ApiException(400, "Missing required parameter 'updateFolder' when calling FoldersApi->UpdateFolder");
 
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
                 "application/json"
@@ -1594,13 +1594,13 @@ namespace Lusid.Drive.Sdk.Api
             };
 
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("id", Lusid.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.PathParameters.Add("id", Finbourne.Drive.Sdk.Client.ClientUtils.ParameterToString(id)); // path parameter
             localVarRequestOptions.Data = updateFolder;
 
             // authentication (oauth2) required

@@ -19,7 +19,7 @@ using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace Lusid.Drive.Sdk.Client
+namespace Finbourne.Drive.Sdk.Client
 {
     /// <summary>
     /// Represents a set of configuration settings
@@ -103,7 +103,7 @@ namespace Lusid.Drive.Sdk.Client
         {
             Proxy = null;
             UserAgent = "OpenAPI-Generator/0.1.304/csharp";
-            BasePath = "https://fbn-ci.lusid.com/drive";
+            BasePath = "https://www.lusid.com/drive";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -111,7 +111,7 @@ namespace Lusid.Drive.Sdk.Client
             {
                 {
                     new Dictionary<string, object> {
-                        {"url", "https://fbn-ci.lusid.com/drive"},
+                        {"url", "https://www.lusid.com/drive"},
                         {"description", "No description provided"},
                     }
                 }
@@ -129,7 +129,7 @@ namespace Lusid.Drive.Sdk.Client
             IDictionary<string, string> defaultHeaders,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "https://fbn-ci.lusid.com/drive") : this()
+            string basePath = "https://www.lusid.com/drive") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");

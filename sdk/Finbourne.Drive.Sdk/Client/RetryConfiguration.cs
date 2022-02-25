@@ -1,7 +1,7 @@
 using Polly;
 using RestSharp;
 
-namespace Lusid.Drive.Sdk.Client
+namespace Finbourne.Drive.Sdk.Client
 {
     /// <summary>
     /// Configuration class to set the polly retry policies to be applied to the requests.

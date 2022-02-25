@@ -11,7 +11,7 @@
 
 using System;
 
-namespace Lusid.Drive.Sdk.Client
+namespace Finbourne.Drive.Sdk.Client
 {
     /// <summary>
     /// A delegate to ExceptionFactory method

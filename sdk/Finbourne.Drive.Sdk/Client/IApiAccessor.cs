@@ -11,7 +11,7 @@
 
 using System;
 
-namespace Lusid.Drive.Sdk.Client
+namespace Finbourne.Drive.Sdk.Client
 {
     /// <summary>
     /// Represents configuration aspects required to interact with the API endpoints.
