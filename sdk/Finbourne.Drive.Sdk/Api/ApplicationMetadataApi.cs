@@ -15,10 +15,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Mime;
-using Lusid.Drive.Sdk.Client;
-using Lusid.Drive.Sdk.Model;
+using Finbourne.Drive.Sdk.Client;
+using Finbourne.Drive.Sdk.Model;
 
-namespace Lusid.Drive.Sdk.Api
+namespace Finbourne.Drive.Sdk.Api
 {
 
     /// <summary>
@@ -33,7 +33,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// Get the comprehensive set of resources that are available for access control
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ResourceListOfAccessControlledResource</returns>
         ResourceListOfAccessControlledResource ListAccessControlledResources();
 
@@ -43,7 +43,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// Get the comprehensive set of resources that are available for access control
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ResourceListOfAccessControlledResource</returns>
         ApiResponse<ResourceListOfAccessControlledResource> ListAccessControlledResourcesWithHttpInfo();
         #endregion Synchronous Operations
@@ -61,7 +61,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// Get the comprehensive set of resources that are available for access control
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResourceListOfAccessControlledResource</returns>
         System.Threading.Tasks.Task<ResourceListOfAccessControlledResource> ListAccessControlledResourcesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -72,7 +72,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <remarks>
         /// Get the comprehensive set of resources that are available for access control
         /// </remarks>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResourceListOfAccessControlledResource)</returns>
         System.Threading.Tasks.Task<ApiResponse<ResourceListOfAccessControlledResource>> ListAccessControlledResourcesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
@@ -92,7 +92,7 @@ namespace Lusid.Drive.Sdk.Api
     /// </summary>
     public partial class ApplicationMetadataApi : IApplicationMetadataApi
     {
-        private Lusid.Drive.Sdk.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
+        private Finbourne.Drive.Sdk.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationMetadataApi"/> class.
@@ -108,13 +108,13 @@ namespace Lusid.Drive.Sdk.Api
         /// <returns></returns>
         public ApplicationMetadataApi(String basePath)
         {
-            this.Configuration = Lusid.Drive.Sdk.Client.Configuration.MergeConfigurations(
-                Lusid.Drive.Sdk.Client.GlobalConfiguration.Instance,
-                new Lusid.Drive.Sdk.Client.Configuration { BasePath = basePath }
+            this.Configuration = Finbourne.Drive.Sdk.Client.Configuration.MergeConfigurations(
+                Finbourne.Drive.Sdk.Client.GlobalConfiguration.Instance,
+                new Finbourne.Drive.Sdk.Client.Configuration { BasePath = basePath }
             );
-            this.Client = new Lusid.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Lusid.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
-            this.ExceptionFactory = Lusid.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Finbourne.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Finbourne.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
+            this.ExceptionFactory = Finbourne.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -123,14 +123,14 @@ namespace Lusid.Drive.Sdk.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ApplicationMetadataApi(Lusid.Drive.Sdk.Client.Configuration configuration)
+        public ApplicationMetadataApi(Finbourne.Drive.Sdk.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
             this.Configuration = configuration;
-            this.Client = new Lusid.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
-            this.AsynchronousClient = new Lusid.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
-            ExceptionFactory = Lusid.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
+            this.Client = new Finbourne.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
+            this.AsynchronousClient = new Finbourne.Drive.Sdk.Client.ApiClient(this.Configuration.BasePath);
+            ExceptionFactory = Finbourne.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
@@ -140,7 +140,7 @@ namespace Lusid.Drive.Sdk.Api
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public ApplicationMetadataApi(Lusid.Drive.Sdk.Client.ISynchronousClient client, Lusid.Drive.Sdk.Client.IAsynchronousClient asyncClient, Lusid.Drive.Sdk.Client.IReadableConfiguration configuration)
+        public ApplicationMetadataApi(Finbourne.Drive.Sdk.Client.ISynchronousClient client, Finbourne.Drive.Sdk.Client.IAsynchronousClient asyncClient, Finbourne.Drive.Sdk.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -149,18 +149,18 @@ namespace Lusid.Drive.Sdk.Api
             this.Client = client;
             this.AsynchronousClient = asyncClient;
             this.Configuration = configuration;
-            this.ExceptionFactory = Lusid.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
+            this.ExceptionFactory = Finbourne.Drive.Sdk.Client.Configuration.DefaultExceptionFactory;
         }
 
         /// <summary>
         /// The client for accessing this underlying API asynchronously.
         /// </summary>
-        public Lusid.Drive.Sdk.Client.IAsynchronousClient AsynchronousClient { get; set; }
+        public Finbourne.Drive.Sdk.Client.IAsynchronousClient AsynchronousClient { get; set; }
 
         /// <summary>
         /// The client for accessing this underlying API synchronously.
         /// </summary>
-        public Lusid.Drive.Sdk.Client.ISynchronousClient Client { get; set; }
+        public Finbourne.Drive.Sdk.Client.ISynchronousClient Client { get; set; }
 
         /// <summary>
         /// Gets the base path of the API client.
@@ -175,12 +175,12 @@ namespace Lusid.Drive.Sdk.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Lusid.Drive.Sdk.Client.IReadableConfiguration Configuration { get; set; }
+        public Finbourne.Drive.Sdk.Client.IReadableConfiguration Configuration { get; set; }
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
         /// </summary>
-        public Lusid.Drive.Sdk.Client.ExceptionFactory ExceptionFactory
+        public Finbourne.Drive.Sdk.Client.ExceptionFactory ExceptionFactory
         {
             get
             {
@@ -196,22 +196,22 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [EARLY ACCESS] ListAccessControlledResources: Get resources available for access control Get the comprehensive set of resources that are available for access control
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ResourceListOfAccessControlledResource</returns>
         public ResourceListOfAccessControlledResource ListAccessControlledResources()
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource> localVarResponse = ListAccessControlledResourcesWithHttpInfo();
+            Finbourne.Drive.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource> localVarResponse = ListAccessControlledResourcesWithHttpInfo();
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [EARLY ACCESS] ListAccessControlledResources: Get resources available for access control Get the comprehensive set of resources that are available for access control
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of ResourceListOfAccessControlledResource</returns>
-        public Lusid.Drive.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource> ListAccessControlledResourcesWithHttpInfo()
+        public Finbourne.Drive.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource> ListAccessControlledResourcesWithHttpInfo()
         {
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
             };
@@ -223,10 +223,10 @@ namespace Lusid.Drive.Sdk.Api
                 "text/json"
             };
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 
@@ -256,25 +256,25 @@ namespace Lusid.Drive.Sdk.Api
         /// <summary>
         /// [EARLY ACCESS] ListAccessControlledResources: Get resources available for access control Get the comprehensive set of resources that are available for access control
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ResourceListOfAccessControlledResource</returns>
         public async System.Threading.Tasks.Task<ResourceListOfAccessControlledResource> ListAccessControlledResourcesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Lusid.Drive.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource> localVarResponse = await ListAccessControlledResourcesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Finbourne.Drive.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource> localVarResponse = await ListAccessControlledResourcesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
         /// [EARLY ACCESS] ListAccessControlledResources: Get resources available for access control Get the comprehensive set of resources that are available for access control
         /// </summary>
-        /// <exception cref="Lusid.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <exception cref="Finbourne.Drive.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ResourceListOfAccessControlledResource)</returns>
-        public async System.Threading.Tasks.Task<Lusid.Drive.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource>> ListAccessControlledResourcesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<Finbourne.Drive.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource>> ListAccessControlledResourcesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
-            Lusid.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Lusid.Drive.Sdk.Client.RequestOptions();
+            Finbourne.Drive.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Drive.Sdk.Client.RequestOptions();
 
             String[] _contentTypes = new String[] {
             };
@@ -287,10 +287,10 @@ namespace Lusid.Drive.Sdk.Api
             };
 
 
-            var localVarContentType = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarContentType = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
             if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
 
-            var localVarAccept = Lusid.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            var localVarAccept = Finbourne.Drive.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
 

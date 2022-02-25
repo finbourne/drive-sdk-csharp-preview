@@ -9,7 +9,7 @@
  */
 
 
-namespace Lusid.Drive.Sdk.Client
+namespace Finbourne.Drive.Sdk.Client
 {
     /// <summary>
     /// Http methods supported by swagger

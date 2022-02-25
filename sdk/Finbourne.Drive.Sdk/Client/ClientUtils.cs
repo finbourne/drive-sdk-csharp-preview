@@ -17,7 +17,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Lusid.Drive.Sdk.Client
+namespace Finbourne.Drive.Sdk.Client
 {
     /// <summary>
     /// Utility functions providing some benefit to API client consumers.

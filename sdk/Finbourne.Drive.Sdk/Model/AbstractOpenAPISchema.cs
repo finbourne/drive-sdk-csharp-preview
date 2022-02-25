@@ -13,7 +13,7 @@ using System;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace Lusid.Drive.Sdk.Model
+namespace Finbourne.Drive.Sdk.Model
 {
     /// <summary>
     ///  Abstract base class for oneOf, anyOf schemas in the OpenAPI specification

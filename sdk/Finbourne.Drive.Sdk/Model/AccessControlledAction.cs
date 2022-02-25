@@ -22,9 +22,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
-using OpenAPIDateConverter = Lusid.Drive.Sdk.Client.OpenAPIDateConverter;
+using OpenAPIDateConverter = Finbourne.Drive.Sdk.Client.OpenAPIDateConverter;
 
-namespace Lusid.Drive.Sdk.Model
+namespace Finbourne.Drive.Sdk.Model
 {
     /// <summary>
     /// AccessControlledAction

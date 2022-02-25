@@ -12,7 +12,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Lusid.Drive.Sdk.Client
+namespace Finbourne.Drive.Sdk.Client
 {
     /// <summary>
     /// Contract for Asynchronous RESTful API interactions.
