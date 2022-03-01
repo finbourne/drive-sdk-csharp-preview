@@ -1,4 +1,4 @@
-# Lusid.Drive.Sdk.Model.IdSelectorDefinition
+# Finbourne.Drive.Sdk.Model.IdSelectorDefinition
 
 ## Properties
 

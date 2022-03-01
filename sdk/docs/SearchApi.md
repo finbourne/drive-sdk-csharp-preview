@@ -1,6 +1,6 @@
-# Lusid.Drive.Sdk.Api.SearchApi
+# Finbourne.Drive.Sdk.Api.SearchApi
 
-All URIs are relative to *https://fbn-ci.lusid.com/drive*
+All URIs are relative to *https://www.lusid.com/drive*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,9 +17,9 @@ Method | HTTP request | Description
 ```csharp
 using System.Collections.Generic;
 using System.Diagnostics;
-using Lusid.Drive.Sdk.Api;
-using Lusid.Drive.Sdk.Client;
-using Lusid.Drive.Sdk.Model;
+using Finbourne.Drive.Sdk.Api;
+using Finbourne.Drive.Sdk.Client;
+using Finbourne.Drive.Sdk.Model;
 
 namespace Example
 {
@@ -28,7 +28,7 @@ namespace Example
         public static void Main()
         {
             Configuration config = new Configuration();
-            config.BasePath = "https://fbn-ci.lusid.com/drive";
+            config.BasePath = "https://www.lusid.com/drive";
             // Configure OAuth2 access token for authorization: oauth2
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 

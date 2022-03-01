@@ -1,5 +1,5 @@
 
-# Lusid.Drive.Sdk.Model.StringSegment
+# Finbourne.Drive.Sdk.Model.StringSegment
 
 ## Properties
 

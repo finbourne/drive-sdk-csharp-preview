@@ -1,4 +1,4 @@
-# Lusid.Drive.Sdk.Model.StorageObject
+# Finbourne.Drive.Sdk.Model.StorageObject
 An object representation of a drive file or folder
 
 ## Properties
