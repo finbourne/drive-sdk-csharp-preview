@@ -85,7 +85,9 @@ namespace Lusid.Drive.Sdk.Extensions
 
             localVarRequestOptions.HeaderParameters.Add("Content-Length",
                 ClientUtils.ParameterToString(contentLength)); // header parameter
-            localVarRequestOptions.Data = body;
+  
+            localVarRequestOptions.FileParameters.Add(xLusidDriveFilename, new StreamFileUpload(xLusidDriveFilename, body, contentLength.Value, xLusidDrivePath) );            
+
             localVarRequestOptions.HeaderParameters.Add("x-lusid-drive-filename", xLusidDriveFilename);
             localVarRequestOptions.HeaderParameters.Add("x-lusid-drive-path", xLusidDrivePath);
 
@@ -100,11 +102,10 @@ namespace Lusid.Drive.Sdk.Extensions
             localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Language", "C#");
             localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Version",
                 typeof(FilesApiExtensions).Assembly.GetName().Version?.ToString());
-
-            var configuration = new Configuration();
+            
 
             var localVarResponse = await restClient
-                .PostAsync<StorageObject>(fileApiEndpointPath, localVarRequestOptions, configuration)
+                .PostAsync<StorageObject>(fileApiEndpointPath, localVarRequestOptions, api.Configuration)
                 .ConfigureAwait(false);
 
             // Exception Handling

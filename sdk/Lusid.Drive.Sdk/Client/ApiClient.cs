@@ -381,12 +381,13 @@ namespace Lusid.Drive.Sdk.Client
             {
                 foreach (var fileParam in options.FileParameters)
                 {
-                    var bytes = ClientUtils.ReadAsBytes(fileParam.Value);
-                    var fileStream = fileParam.Value as FileStream;
-                    if (fileStream != null)
-                        request.Files.Add(FileParameter.Create(fileParam.Key, bytes, System.IO.Path.GetFileName(fileStream.Name)));
-                    else
-                        request.Files.Add(FileParameter.Create(fileParam.Key, bytes, "no_file_name_provided"));
+                    var streamFileUpload = fileParam.Value;
+                    if (streamFileUpload != null)
+                        request.Files.Add(FileParameter.Create(fileParam.Key,
+                            s => streamFileUpload.Body.CopyTo(s), 
+                            // this SHOULD ensure client is not loading whole file in memory,
+                            // however it does seem to still do it (perhaps due to incorrect implementation on server side?)
+                            streamFileUpload.Length, fileName:streamFileUpload.Name));
                 }
             }
 
@@ -397,7 +398,7 @@ namespace Lusid.Drive.Sdk.Client
                     request.AddCookie(cookie.Name, cookie.Value);
                 }
             }
-
+            
             return request;
         }
 
