@@ -101,10 +101,8 @@ namespace Lusid.Drive.Sdk.Extensions
             localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Version",
                 typeof(FilesApiExtensions).Assembly.GetName().Version?.ToString());
 
-            var configuration = new Configuration();
-
             var localVarResponse = await restClient
-                .PostAsync<StorageObject>(fileApiEndpointPath, localVarRequestOptions, configuration)
+                .PostAsync<StorageObject>(fileApiEndpointPath, localVarRequestOptions, api.Configuration)
                 .ConfigureAwait(false);
 
             // Exception Handling
@@ -114,7 +112,7 @@ namespace Lusid.Drive.Sdk.Extensions
                 if (_exception != null) throw _exception;
             }
 
-            return localVarResponse.Data;
+            return localVarResponse.Data;   
         }
 
 

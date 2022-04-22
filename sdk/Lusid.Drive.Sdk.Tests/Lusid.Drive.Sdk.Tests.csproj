@@ -22,8 +22,5 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="secrets.json" />
-    <EmbeddedResource Include="secrets.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
   </ItemGroup>
 </Project>
