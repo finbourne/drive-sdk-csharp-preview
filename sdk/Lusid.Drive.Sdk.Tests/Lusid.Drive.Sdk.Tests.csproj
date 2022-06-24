@@ -16,11 +16,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="secrets.json" CopyToOutputDirectory="Always" Condition="Exists('secrets.json')" />
-    <None Update="secrets.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lusid.Drive.Sdk\Lusid.Drive.Sdk.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="secrets.json" />
   </ItemGroup>
 </Project>
