@@ -11,7 +11,7 @@ namespace Lusid.Drive.Sdk.Utilities
     {
         /// <summary>
         /// Builds an ApiConfiguration. using the supplied configuration file or environment
-        /// variables. If the file does not exis
+        /// variables. If the file does not exist
         ///
         /// For further details refer to https://github.com/finbourne/lusid-sdk-csharp/wiki/API-credentials
         /// </summary>
