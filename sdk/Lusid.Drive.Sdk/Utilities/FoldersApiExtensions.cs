@@ -31,10 +31,10 @@ namespace Lusid.Drive.Sdk.Utilities
         /// <exception cref="ApiException"></exception>
         public StorageObject CreateAllFoldersInPath(string path)
         {
-            path = path.Trim('/');
-            if (String.IsNullOrEmpty(path))
-                throw new ApiException(157, "Invalid Path Provided, please supply one or more folders to be created");
+            if (string.IsNullOrEmpty(path) | path == "/")
+                throw new ApiException(157, "Invalid path provided, please supply one or more folders to be created");
 
+            path = path.Trim('/');
             var folderPaths = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
 
             StorageObject folderThusFar = null;
