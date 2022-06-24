@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Lusid.Drive.Sdk.Api;
@@ -33,8 +34,11 @@ namespace Lusid.Drive.Sdk.Utilities
         {
             if (string.IsNullOrEmpty(path) | path == "/")
                 throw new ApiException(157, "Invalid path provided, please supply one or more folders to be created");
-
+            
             path = path.Trim('/');
+            if (path.Length > 1024)
+                throw new ApiException(157, "Path length must be less than 1024 characters");
+            
             var folderPaths = path.Split('/', StringSplitOptions.RemoveEmptyEntries);
 
             StorageObject folderThusFar = null;

@@ -49,9 +49,27 @@ namespace Lusid.Drive.Sdk.Tests
         }
 
         [Test]
-        public void CreateRootDirectoryReturnsException()
+        public void CreateRootDirectoryThrowsException()
         {
             Assert.Throws(typeof(ApiException), () => _foldersApiExtensions.CreateAllFoldersInPath("/"));
+        }
+
+        [Test]
+        public void CreateLongDirectoryThrowsException()
+        {
+            var longFilePath = new string('a', 1025);
+            Assert.Throws(typeof(ApiException), () => _foldersApiExtensions.CreateAllFoldersInPath(longFilePath));
+        }
+
+        [Test]
+        public void CreateFolderOneLevelDeep()
+        {
+            var folderPath = "/" + Guid.NewGuid() + "/";
+
+            var newFolder = _foldersApiExtensions.CreateAllFoldersInPath(folderPath);
+            
+            Assert.AreEqual(folderPath.Trim('/'), newFolder.Name);
+            Assert.AreEqual("/", newFolder.Path);
         }
         
     }
