@@ -57,8 +57,7 @@ namespace Lusid.Drive.Sdk.Utilities
                 catch (ApiException e)
                 {
                     var errorResponse = e.ProblemDetails();
-                    if (errorResponse == null ||
-                        errorResponse.Code != Finbourne.Errors.ErrorCodes.FolderAlreadyExists) throw;
+                    if (!(errorResponse is {Code: 664})) throw;
                     
                     // Get the folder that has the same name.
                     // Do not need to worry about paging, as there can only be one folder with the same name
