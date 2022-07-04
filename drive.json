@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.1.368",
+    "version": "0.1.369",
     "x-logo": {
       "url": "https://www.lusid.com/app/assets/logo_white.png",
       "backgroundColor": "#415464"
@@ -25,7 +25,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.",
+        "summary": "[EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.",
         "operationId": "CreateFile",
         "parameters": [
           {
@@ -173,7 +173,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       }
     },
     "/api/files/{id}": {
@@ -181,7 +181,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] GetFile: Get a file stored in Drive.",
+        "summary": "[EARLY ACCESS] GetFile: Get a file stored in Drive.",
         "operationId": "GetFile",
         "parameters": [
           {
@@ -294,13 +294,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       },
       "delete": {
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] DeleteFile: Deletes a file from Drive.",
+        "summary": "[EARLY ACCESS] DeleteFile: Deletes a file from Drive.",
         "operationId": "DeleteFile",
         "parameters": [
           {
@@ -357,13 +357,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       },
       "put": {
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] UpdateFileMetadata: Updates metadata for a file in Drive.",
+        "summary": "[EARLY ACCESS] UpdateFileMetadata: Updates metadata for a file in Drive.",
         "operationId": "UpdateFileMetadata",
         "parameters": [
           {
@@ -491,7 +491,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       }
     },
     "/api/files/{id}/contents": {
@@ -499,7 +499,7 @@
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] DownloadFile: Download the file from Drive.",
+        "summary": "[EARLY ACCESS] DownloadFile: Download the file from Drive.",
         "operationId": "DownloadFile",
         "parameters": [
           {
@@ -616,13 +616,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       },
       "put": {
         "tags": [
           "Files"
         ],
-        "summary": "[BETA] UpdateFileContents: Updates contents of a file in Drive.",
+        "summary": "[EARLY ACCESS] UpdateFileContents: Updates contents of a file in Drive.",
         "operationId": "UpdateFileContents",
         "parameters": [
           {
@@ -757,7 +757,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       }
     },
     "/api/folders": {
@@ -765,7 +765,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] GetRootFolder: List contents of root folder",
+        "summary": "[EARLY ACCESS] GetRootFolder: List contents of root folder",
         "operationId": "GetRootFolder",
         "parameters": [
           {
@@ -891,13 +891,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       },
       "post": {
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] CreateFolder: Create a new folder in LUSID Drive",
+        "summary": "[EARLY ACCESS] CreateFolder: Create a new folder in LUSID Drive",
         "operationId": "CreateFolder",
         "requestBody": {
           "description": "A CreateFolder object that defines the name and path of the new folder",
@@ -1010,7 +1010,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       }
     },
     "/api/folders/{id}": {
@@ -1018,7 +1018,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] GetFolder: Get metadata of folder",
+        "summary": "[EARLY ACCESS] GetFolder: Get metadata of folder",
         "operationId": "GetFolder",
         "parameters": [
           {
@@ -1151,13 +1151,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       },
       "put": {
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] UpdateFolder: Update an existing folder's name, path",
+        "summary": "[EARLY ACCESS] UpdateFolder: Update an existing folder's name, path",
         "operationId": "UpdateFolder",
         "parameters": [
           {
@@ -1305,13 +1305,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       },
       "delete": {
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] DeleteFolder: Delete a specified folder and all subfolders",
+        "summary": "[EARLY ACCESS] DeleteFolder: Delete a specified folder and all subfolders",
         "operationId": "DeleteFolder",
         "parameters": [
           {
@@ -1388,13 +1388,13 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       },
       "post": {
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] MoveFolder: Move files to specified folder",
+        "summary": "[EARLY ACCESS] MoveFolder: Move files to specified folder",
         "operationId": "MoveFolder",
         "parameters": [
           {
@@ -1550,7 +1550,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       }
     },
     "/api/folders/{id}/contents": {
@@ -1558,7 +1558,7 @@
         "tags": [
           "Folders"
         ],
-        "summary": "[BETA] GetFolderContents: List contents of a folder",
+        "summary": "[EARLY ACCESS] GetFolderContents: List contents of a folder",
         "operationId": "GetFolderContents",
         "parameters": [
           {
@@ -1717,7 +1717,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       }
     },
     "/api/metadata/access/resources": {
@@ -1773,7 +1773,7 @@
         "tags": [
           "Search"
         ],
-        "summary": "[BETA] Search: Search for a file or folder with a given name and path",
+        "summary": "[EARLY ACCESS] Search: Search for a file or folder with a given name and path",
         "operationId": "Search",
         "parameters": [
           {
@@ -1902,7 +1902,7 @@
             "oauth2": [ ]
           }
         ],
-        "x-fbn-apistatus": "Beta"
+        "x-fbn-apistatus": "EarlyAccess"
       }
     }
   },
