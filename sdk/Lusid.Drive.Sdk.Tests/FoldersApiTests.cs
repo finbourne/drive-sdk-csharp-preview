@@ -52,12 +52,12 @@ namespace Lusid.Drive.Sdk.Tests
             var createFolder = new CreateFolder("/", folderName);
             var create = _foldersApi.CreateFolder(createFolder);
             
-            var root = _foldersApi.GetRootFolder();
-            Assert.That(root.Values.ToImmutableDictionary(x => x.Name, y => y.Id)[folderName], Is.EqualTo(create.Id));
+            var rootAfterCreate = _foldersApi.GetRootFolder(filter: $"name eq '{folderName}'");
+            Assert.That(rootAfterCreate.Values.Single().Id, Is.EqualTo(create.Id));
             
             _foldersApi.DeleteFolder(create.Id);
-            Assert.False( _foldersApi.GetRootFolder().Values.ToImmutableDictionary(x => x.Name, y => y).ContainsKey(folderName));
+            var rootAfterDelete = _foldersApi.GetRootFolder(filter: $"name eq '{folderName}'");
+            Assert.That(rootAfterDelete.Values, Has.Count.Zero);
         }
-        
     }
 }
