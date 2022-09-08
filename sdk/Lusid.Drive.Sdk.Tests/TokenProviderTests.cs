@@ -13,6 +13,11 @@ namespace Lusid.Drive.Sdk.Tests
         [Test]
         public async Task CanGetNewTokenWhenRefreshTokenExpired()
         {
+            if (ApiConfig.Value.MissingSecretVariables)
+            {
+                Assert.Inconclusive();
+            }
+
             var provider = new ClientCredentialsFlowTokenProvider(ApiConfig.Value);
             var _ = await provider.GetAuthenticationTokenAsync();
             var firstTokenDetails = provider.GetLastToken();
