@@ -1,11 +1,10 @@
+![LUSID_by_Finbourne](./resources/Finbourne_Logo_Teal.svg)
+
 # Deprecated
 
 Please note that this repository is deprecated and will be archived early 2024.
 
 All functionality is now contained, in the [drive-sdk-csharp](https://github.com/finbourne/drive-sdk-csharp) repository on the `main` branch.
-
-![LUSID_by_Finbourne](https://content.finbourne.com/LUSID_repo.png)
-
 
 # LUSID<sup>®</sup> Drive C# SDK preview
 
