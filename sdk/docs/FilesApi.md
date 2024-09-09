@@ -4,9 +4,9 @@ All URIs are relative to *https://fbn-ci.lusid.com/drive*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateFile**](FilesApi.md#createfile) | **POST** /api/files | [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
+[**CreateFile**](FilesApi.md#createfile) | **POST** /api/files | CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
 [**DeleteFile**](FilesApi.md#deletefile) | **DELETE** /api/files/{id} | [EARLY ACCESS] DeleteFile: Deletes a file from Drive.
-[**DownloadFile**](FilesApi.md#downloadfile) | **GET** /api/files/{id}/contents | [EARLY ACCESS] DownloadFile: Download the file from Drive.
+[**DownloadFile**](FilesApi.md#downloadfile) | **GET** /api/files/{id}/contents | DownloadFile: Download the file from Drive.
 [**GetFile**](FilesApi.md#getfile) | **GET** /api/files/{id} | [EARLY ACCESS] GetFile: Get a file stored in Drive.
 [**UpdateFileContents**](FilesApi.md#updatefilecontents) | **PUT** /api/files/{id}/contents | [EARLY ACCESS] UpdateFileContents: Updates contents of a file in Drive.
 [**UpdateFileMetadata**](FilesApi.md#updatefilemetadata) | **PUT** /api/files/{id} | [EARLY ACCESS] UpdateFileMetadata: Updates metadata for a file in Drive.
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 # **CreateFile**
 > StorageObject CreateFile (string xLusidDriveFilename, string xLusidDrivePath, int contentLength, byte[] body)
 
-[EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
+CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
 
 ### Example
 ```csharp
@@ -45,7 +45,7 @@ namespace Example
 
             try
             {
-                // [EARLY ACCESS] CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
+                // CreateFile: Uploads a file to Lusid Drive. If using an SDK, consider using the UploadAsStreamAsync function for larger files instead.
                 StorageObject result = apiInstance.CreateFile(xLusidDriveFilename, xLusidDrivePath, contentLength, body);
                 Debug.WriteLine(result);
             }
@@ -169,7 +169,7 @@ void (empty response body)
 # **DownloadFile**
 > System.IO.Stream DownloadFile (string id)
 
-[EARLY ACCESS] DownloadFile: Download the file from Drive.
+DownloadFile: Download the file from Drive.
 
 ### Example
 ```csharp
@@ -195,7 +195,7 @@ namespace Example
 
             try
             {
-                // [EARLY ACCESS] DownloadFile: Download the file from Drive.
+                // DownloadFile: Download the file from Drive.
                 System.IO.Stream result = apiInstance.DownloadFile(id);
                 Debug.WriteLine(result);
             }
