@@ -9,7 +9,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "0.1.657",
+    "version": "0.1.670",
     "x-logo": {
       "url": "https://www.lusid.com/app/assets/logo_white.png",
       "backgroundColor": "#415464"
@@ -152,8 +152,8 @@
             "description": "Identifier of the file to be retrieved.",
             "required": true,
             "schema": {
-              "maxLength": 40,
-              "minLength": 30,
+              "maxLength": 36,
+              "minLength": 36,
               "pattern": "^[a-zA-Z0-9\\-]+$",
               "type": "string"
             }
@@ -234,8 +234,8 @@
             "description": "Identifier of the file to be deleted.",
             "required": true,
             "schema": {
-              "maxLength": 40,
-              "minLength": 30,
+              "maxLength": 36,
+              "minLength": 36,
               "pattern": "^[a-zA-Z0-9\\-]+$",
               "type": "string"
             }
@@ -296,8 +296,8 @@
             "description": "Identifier of the file to be updated",
             "required": true,
             "schema": {
-              "maxLength": 40,
-              "minLength": 30,
+              "maxLength": 36,
+              "minLength": 36,
               "pattern": "^[a-zA-Z0-9\\-]+$",
               "type": "string"
             }
@@ -392,8 +392,8 @@
             "description": "Identifier of the file to be downloaded.",
             "required": true,
             "schema": {
-              "maxLength": 40,
-              "minLength": 30,
+              "maxLength": 36,
+              "minLength": 36,
               "pattern": "^[a-zA-Z0-9\\-]+$",
               "type": "string"
             }
@@ -514,8 +514,8 @@
             "description": "The unique file identifier",
             "required": true,
             "schema": {
-              "maxLength": 40,
-              "minLength": 30,
+              "maxLength": 36,
+              "minLength": 36,
               "pattern": "^[a-zA-Z0-9\\-]+$",
               "type": "string"
             }
@@ -823,8 +823,8 @@
             "description": "Unique ID of the folder",
             "required": true,
             "schema": {
-              "maxLength": 40,
-              "minLength": 30,
+              "maxLength": 36,
+              "minLength": 36,
               "pattern": "^[a-zA-Z0-9\\-]+$",
               "type": "string"
             }
@@ -925,8 +925,8 @@
             "description": "Unique ID of the folder",
             "required": true,
             "schema": {
-              "maxLength": 40,
-              "minLength": 30,
+              "maxLength": 36,
+              "minLength": 36,
               "pattern": "^[a-zA-Z0-9\\-]+$",
               "type": "string"
             }
@@ -1039,8 +1039,8 @@
             "description": "Unique ID of the folder",
             "required": true,
             "schema": {
-              "maxLength": 40,
-              "minLength": 30,
+              "maxLength": 36,
+              "minLength": 36,
               "pattern": "^[a-zA-Z0-9\\-]+$",
               "type": "string"
             }
@@ -1121,8 +1121,8 @@
             "description": "Unique ID of the folder where the files should be moved",
             "required": true,
             "schema": {
-              "maxLength": 40,
-              "minLength": 30,
+              "maxLength": 36,
+              "minLength": 36,
               "pattern": "^[a-zA-Z0-9\\-]+$",
               "type": "string"
             }
@@ -1277,8 +1277,8 @@
             "description": "Unique ID of the folder",
             "required": true,
             "schema": {
-              "maxLength": 40,
-              "minLength": 30,
+              "maxLength": 36,
+              "minLength": 36,
               "pattern": "^[a-zA-Z0-9\\-]+$",
               "type": "string"
             }
@@ -1688,7 +1688,7 @@
             "type": "string"
           },
           "entity": {
-            "maxLength": 25,
+            "maxLength": 40,
             "minLength": 3,
             "type": "string"
           }
@@ -2037,8 +2037,8 @@
         "type": "object",
         "properties": {
           "id": {
-            "maxLength": 40,
-            "minLength": 30,
+            "maxLength": 36,
+            "minLength": 36,
             "pattern": "^[a-zA-Z0-9\\-]+$",
             "type": "string",
             "description": "File or folder identifier"
